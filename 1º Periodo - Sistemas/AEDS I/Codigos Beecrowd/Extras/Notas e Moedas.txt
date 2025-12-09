@@ -1,0 +1,58 @@
+#include <stdio.h>
+ 
+int main(){
+    double N,decimas;
+    int interas,valorreal,valormoeda;
+    int troco100,troco50,troco20,troco10,troco5,troco2,moeda100,moeda50,moeda25,moeda10,moeda5,moeda1;
+    scanf("%lf",&N);
+    decimas = (N - (int)N)*1000;
+    interas = (int) N;
+
+    //NOTAS:
+
+    valorreal = interas;
+
+    troco100 = valorreal/100;
+    valorreal = interas%100;
+
+    troco50 = valorreal/50;
+    valorreal = valorreal%50;
+
+    troco20 = valorreal/20;
+    valorreal = valorreal%20;
+
+    troco10 = valorreal/10;
+    valorreal = valorreal%10;
+
+    troco5 = valorreal/5;
+    valorreal = valorreal%5;
+
+    troco2 = valorreal/2;
+    valorreal = valorreal%2;
+
+    //MOEDAS:
+
+    moeda100 = valorreal/1;
+    valorreal= valorreal%1;
+
+    valormoeda = decimas;
+
+    moeda50 = valormoeda/500;
+    valormoeda = valormoeda%500;
+
+    moeda25 = valormoeda/250;
+    valormoeda = valormoeda%250;
+
+    moeda10 = valormoeda/100;
+    valormoeda = valormoeda%100;
+
+    moeda5 = valormoeda/50;
+    valormoeda = valormoeda%50;
+
+    moeda1 = valormoeda/10;
+    valormoeda = valormoeda%10;
+
+    printf("NOTAS:\n%d nota(s) de R$ 100.00\n%d nota(s) de R$ 50.00\n%d nota(s) de R$ 20.00\n%d nota(s) de R$ 10.00\n%d nota(s) de R$ 5.00\n%d nota(s) de R$ 2.00\nMOEDAS:\n%d moeda(s) de R$ 1.00\n%d moeda(s) de R$ 0.50\n%d moeda(s) de R$ 0.25\n%d moeda(s) de R$ 0.10\n%d moeda(s) de R$ 0.05\n%d moeda(s) de R$ 0.01\n",troco100,troco50,troco20,troco10,troco5,troco2,moeda100,moeda50,moeda25,moeda10,moeda5,moeda1);
+    return 0;
+
+}

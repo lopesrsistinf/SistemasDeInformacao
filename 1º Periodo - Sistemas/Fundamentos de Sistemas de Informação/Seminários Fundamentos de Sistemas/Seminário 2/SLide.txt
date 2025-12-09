@@ -1,0 +1,283 @@
+Slide 1: Capa
+ANÁLISE DE CASOS DE CIBERSEGURANÇA: INCIDENTES EM ISRAEL
+
+[Seu Nome] [Sua Instituição/Empresa]
+
+[Cidade] 2025
+
+Slide 2: Sumário
+SUMÁRIO
+
+INTRODUÇÃO
+
+ESTUDO DE CASO 1: ATAQUE À SEGURADORA SHIRBIT (2020)
+
+Descrição do Incidente
+
+Prejuízos Causados
+
+Consequências
+
+Ações Corretivas e Preventivas
+
+ESTUDO DE CASO 2: ATAQUE AO HILLEL YAFFE MEDICAL CENTER (2021)
+
+Descrição do Incidente
+
+Prejuízos Causados
+
+Consequências
+
+Ações Corretivas e Preventivas
+
+ESTUDO DE CASO 3: VAZAMENTO DE DADOS DO SITE ATRAF (2021)
+
+Descrição do Incidente
+
+Prejuízos Causados
+
+Consequências
+
+Ações Corretivas e Preventivas
+
+CONCLUSÃO
+
+REFERÊNCIAS
+
+Slide 3: 1. INTRODUÇÃO
+1. INTRODUÇÃO
+
+Esta apresentação analisa três incidentes de cibersegurança de alto impacto ocorridos em Israel entre 2020 e 2021.
+
+O objetivo é examinar as características de cada ataque, os prejuízos gerados, as consequências para as vítimas e organizações, e as lições aprendidas em termos de medidas corretivas e preventivas.
+
+Os casos abordados são:
+
+O ataque de ransomware contra a seguradora Shirbit.
+
+A paralisação do Hillel Yaffe Medical Center.
+
+O vazamento de dados sensíveis do site de relacionamentos Atraf.
+
+Slide 4: 2. ESTUDO DE CASO 1: ATAQUE À SEGURADORA SHIRBIT (2020)
+2. ESTUDO DE CASO 1: ATAQUE À SEGURADORA SHIRBIT (2020)
+
+Slide 5: 2.1 Descrição do Incidente
+2.1 Descrição do Incidente
+
+Evento: Ataque massivo de ransomware em dezembro de 2020.
+
+Autor: Grupo de hackers "Black Shadow".
+
+Ação: Exfiltração de grande volume de dados sensíveis de clientes, como documentos de identidade, registros médicos e informações de pagamento.
+
+Extorsão: O grupo exigiu um resgate de aproximadamente US$ 1 milhão em Bitcoin.
+
+Desfecho: Com a recusa do pagamento, os invasores iniciaram o vazamento dos dados em lotes na internet, afetando inclusive funcionários do setor público e judiciário.
+
+Slide 6: 2.2 Prejuízos Causados
+2.2 Prejuízos Causados
+
+Reputacionais:
+
+Severo abalo na confiança dos clientes e do mercado.
+
+Dano à imagem da empresa por falha na proteção de dados críticos.
+
+Financeiros:
+
+Custos elevados com investigação, remediação e fortalecimento da segurança.
+
+Perda de clientes e receita.
+
+Custos indiretos superaram o valor do resgate solicitado.
+
+Sociais e Políticos:
+
+Geração de uma crise de confiança na segurança de infraestruturas críticas nacionais.
+
+Slide 7: 2.3 Consequências e Ações Corretivas
+2.3 Consequências e Ações Corretivas
+
+Para as Vítimas:
+
+Exposição a fraudes, roubo de identidade e chantagem.
+
+Angústia e constrangimento pela divulgação de informações privadas.
+
+Para a Organização:
+
+Investigação rigorosa por órgãos reguladores.
+
+Responsabilização por negligência, resultando em sanções e risco de ações judiciais coletivas.
+
+Ações Corretivas:
+
+Implementação de um plano de recuperação.
+
+Reconstrução da infraestrutura de TI com protocolos de segurança mais rígidos.
+
+Melhoria dos sistemas de monitoramento e resposta a incidentes.
+
+Slide 8: 2.4 Medidas Preventivas (Falhas de Segurança)
+2.4 Medidas Preventivas (Falhas de Segurança)
+
+A investigação revelou a ausência de controles de segurança básicos:
+
+Governança: Inexistência de um Diretor de Segurança da Informação (CISO) em tempo integral.
+
+Controle de Acesso:
+
+Utilização de senhas fracas em sistemas críticos.
+
+Não implementação de autenticação de dois fatores (2FA).
+
+Arquitetura de Rede:
+
+Falta de segmentação de rede, o que facilitou o movimento lateral dos invasores após o acesso inicial.
+
+Slide 9: 3. ESTUDO DE CASO 2: ATAQUE AO HILLEL YAFFE MEDICAL CENTER (2021)
+3. ESTUDO DE CASO 2: ATAQUE AO HILLEL YAFFE MEDICAL CENTER (2021)
+
+Slide 10: 3.1 Descrição do Incidente e Prejuízos
+3.1 Descrição do Incidente e Prejuízos
+
+Evento: Ataque de ransomware em outubro de 2021.
+
+Impacto: Paralisação completa dos sistemas de TI do hospital.
+
+Ação: Servidores e estações de trabalho foram criptografados.
+
+Prejuízos Operacionais:
+
+Interrupção crítica de serviços de saúde.
+
+Cancelamento de cirurgias, transferência de pacientes e retorno a registros manuais em papel.
+
+Prejuízos Financeiros e Sociais:
+
+Custos elevados com recuperação e perda de receita.
+
+Pânico social e debate nacional sobre a vulnerabilidade do setor de saúde.
+
+Slide 11: 3.2 Consequências e Ações Corretivas
+3.2 Consequências e Ações Corretivas
+
+Para os Pacientes:
+
+Tratamentos adiados e risco de agravamento de condições de saúde.
+
+Aumento do risco de erros médicos pela falta de acesso a prontuários.
+
+Para a Organização:
+
+O processo de recuperação levou meses.
+
+O incidente motivou a exigência de padrões de segurança mais elevados para todo o setor de saúde em Israel.
+
+Ações Corretivas:
+
+Restauração gradual dos sistemas a partir de backups.
+
+Reconstrução da infraestrutura de rede.
+
+Anúncio de um plano de investimento governamental para a cibersegurança em hospitais.
+
+Slide 12: 3.3 Medidas Preventivas (Falhas de Segurança)
+3.3 Medidas Preventivas (Falhas de Segurança)
+
+As investigações apontaram possíveis vetores de entrada que poderiam ter sido mitigados:
+
+Vetor de Entrada: Vulnerabilidade em sistema legado ou ataque de phishing.
+
+Medidas Preventivas que Deveriam Existir:
+
+Programa contínuo de conscientização e treinamento contra phishing.
+
+Gerenciamento rigoroso de atualizações (patches) de segurança.
+
+Implementação de uma arquitetura de "confiança zero" (Zero Trust) para limitar a propagação de um ataque.
+
+Slide 13: 4. ESTUDO DE CASO 3: VAZAMENTO DE DADOS DO SITE ATRAF (2021)
+4. ESTUDO DE CASO 3: VAZAMENTO DE DADOS DO SITE ATRAF (2021)
+
+Slide 14: 4.1 Descrição do Incidente e Prejuízos
+4.1 Descrição do Incidente e Prejuízos
+
+Evento: Ataque à empresa de hospedagem Cyberserve em outubro de 2021, pelo grupo "Black Shadow".
+
+Alvo Indireto: O site de relacionamentos LGBTQ+ Atraf.
+
+Ação: Vazamento de dados altamente pessoais de cerca de 1.000 usuários, incluindo nomes, localizações e status de HIV.
+
+Prejuízos Sociais e Pessoais (os mais graves):
+
+Dano psicológico e social imensurável às vítimas.
+
+Grave violação de privacidade e exposição a estigmas.
+
+Prejuízos Reputacionais e Financeiros:
+
+Destruição da reputação da Cyberserve e do Atraf, inviabilizando suas operações.
+
+Slide 15: 4.2 Consequências e Ações Corretivas
+4.2 Consequências e Ações Corretivas
+
+Para as Vítimas:
+
+Risco de chantagem, discriminação e outing (exposição da orientação sexual sem consentimento).
+
+Aumento da procura por suporte psicológico em linhas de emergência.
+
+Para as Organizações:
+
+A Cyberserve e o Atraf tiveram suas operações inviabilizadas pela perda de confiança.
+
+Ações Corretivas:
+
+Mobilização de ONGs para oferecer suporte legal e psicológico às vítimas.
+
+Início de investigação pela Autoridade de Proteção de Privacidade sobre a responsabilidade da empresa de hospedagem.
+
+Slide 16: 4.3 Medidas Preventivas (Falhas de Segurança)
+4.3 Medidas Preventivas (Falhas de Segurança)
+
+O incidente expôs falhas críticas na proteção de dados sensíveis:
+
+Na Empresa de Hospedagem (Cyberserve):
+
+Ausência de criptografia robusta para dados em repouso.
+
+Falha no monitoramento contínuo de atividades suspeitas na rede.
+
+No Site (Atraf):
+
+Não utilização de técnicas de anonimização ou pseudo-anonimização de dados para desassociar identidades reais de informações sensíveis, o que poderia ter limitado o dano.
+
+Slide 17: 5. CONCLUSÃO
+5. CONCLUSÃO
+
+A análise dos três casos evidencia lições fundamentais para a cibersegurança:
+
+A importância da "higiene cibernética" básica: Controles como senhas fortes, autenticação multifator (MFA) e gerenciamento de vulnerabilidades são essenciais para prevenir ou mitigar ataques.
+
+O impacto humano dos vazamentos: As consequências transcendem o âmbito financeiro, causando danos psicológicos e sociais severos e duradouros às vítimas.
+
+A responsabilidade da cadeia de suprimentos: A segurança de uma organização depende também da segurança de seus fornecedores e parceiros de infraestrutura.
+
+A criticidade dos serviços essenciais: Setores como saúde demandam um nível superior de proteção e resiliência cibernética, pois o impacto de um ataque pode colocar vidas em risco.
+
+Slide 18: 6. REFERÊNCIAS
+6. REFERÊNCIAS
+
+BLACK Shadow hackers leak data of Israeli LGBTQ dating site users. BBC News, 30 out. 2021.
+
+HACKERS publish sensitive info of users on Israeli LGBTQ dating app. The Jerusalem Post, 30 out. 2021.
+
+INSURANCE firm Shirbit hit by major hack, client info posted online. The Times of Israel, 1 dez. 2020.
+
+ISRAELI hospital under cyber attack, patient data may be compromised. Reuters, 13 out. 2021.
+
+RANSOMWARE Attack on Israeli Hospital Grinds Treatment to a Halt. Haaretz, 14 out. 2021.
+
+REGULATOR finds severe deficiencies in Shirbit's information security. Calcalistech, 21 jun. 2021.

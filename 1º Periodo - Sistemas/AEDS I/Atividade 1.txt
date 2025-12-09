@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+int Numero = 0, Cont = 0, Resp = 99;
+srand(time(NULL));
+Numero = rand() % 100;
+printf("\n Eu escolhi um numero e voce vai tentar adivinhar!");
+while(Numero != Resp){
+    printf("\n\n Digite um numero entre 0 e 99: ");
+    scanf("%d", &Resp);
+    if (Resp < 0 || Resp > 99) continue;
+    if (Numero > Resp) printf("\n\n O Numero e > que %d\n",Resp);
+    if (Numero < Resp) printf("\n\n O Numero e < que %d\n",Resp);
+    Cont = Cont + 1;
+}
+printf("\n\n\n Voce conseguiu em %d tentativas!!! \n\n\n",Cont);
+return 0;
+}

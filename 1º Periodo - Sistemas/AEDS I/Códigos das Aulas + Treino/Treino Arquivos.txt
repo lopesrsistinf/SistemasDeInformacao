@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*
+typedef struct{
+    float valorVenda;
+    char nomeVendedor[21];
+}Venda;
+
+Venda vendaRealizada(){
+    Venda V;
+    printf("Digite o valor da venda: ");
+    scanf("%f",&V.valorVenda);
+    printf("Digite o nome do vendedor: ");
+    scanf(" %[^\n]",V.nomeVendedor);
+    return V;
+}
+
+int main()
+{
+    FILE *fpVenda;
+    int Continuar = 1;
+    float somaVendas = 0;
+    fpVenda = fopen("vendas.txt","w+");
+    while(Continuar){
+        Venda v1;
+        v1 = vendaRealizada();
+        somaVendas += v1.valorVenda;
+        fprintf(fpVenda,"%.2f %s\n",v1.valorVenda,v1.nomeVendedor);
+        printf("Deseja continuar? 1 - Sim / 0 - Nao: ");
+        scanf("%d",&Continuar);
+        if (Continuar == 0){
+            break;
+        }
+    }
+    fprintf(fpVenda,"TOTAL VENDIDO: %.2f",somaVendas);
+    fclose(fpVenda);
+    return 0;
+}*/
+
+/*
+typedef struct{
+    char Placa[8];
+    char Modelo[21];
+    int Ano;
+    float Preco;
+}Veiculo;
+
+Veiculo cadastrarVeiculo(){
+    Veiculo V;
+    printf("Digite a placa do veiculo: ");
+    scanf(" %[^\n]",V.Placa);
+    printf("Digite o modelo do carro: ");
+    scanf(" %[^\n]",V.Modelo);
+    printf("Digite o ano do veiculo: ");
+    scanf("%d", &V.Ano);
+    printf("Digite o preco do veiculo: ");
+    scanf("%f",&V.Preco);
+    return V;
+}
+
+void alterarVeiculo(){
+    FILE *fpVeiculo;
+    fpVeiculo = fopen("carros.txt","rb+");
+    Veiculo V;
+    char placaVeiculo[8];
+    char novaPlaca[8];
+    printf("Digite o numero da placa: ");
+    scanf(" %[^\n]",placaVeiculo);
+
+    while(fread(&V,sizeof(Veiculo),1,fpVeiculo)){
+
+        if (strcmp(V.Placa,placaVeiculo)==0){
+            printf("Digite a nova placa: ");
+            scanf(" %[^\n]",novaPlaca);
+            strcpy(V.Placa,novaPlaca);
+            fseek(fpVeiculo,-sizeof(Veiculo),SEEK_CUR);
+            fwrite(&V,sizeof(Veiculo),1,fpVeiculo);
+            break;
+        }
+
+    }
+    fclose(fpVeiculo);
+}
+
+int main(){
+    FILE *fpVeiculo;
+    fpVeiculo = fopen("carros.txt","ab+");
+    int Continuar = 1;
+    while(Continuar){
+        Veiculo v1;
+        v1 = cadastrarVeiculo();
+        fwrite(&v1,sizeof(Veiculo),1,fpVeiculo);
+        printf("Deseja continuar? 1 - Sim / 0 - Nao: ");
+        scanf("%d",&Continuar);
+    }
+    fclose(fpVeiculo);
+    return 0;
+}*/
+

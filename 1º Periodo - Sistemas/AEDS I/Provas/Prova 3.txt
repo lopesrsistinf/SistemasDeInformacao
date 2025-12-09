@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Questão 2:
+/*
+int main()
+{
+    FILE *fpAlunos;
+    fpAlunos = fopen("Alunos.txt","w+");
+    char nomeAluno[20];
+    int contador = 0;
+
+    fprintf(fpAlunos,"Lista de Alunos da 4a. Serie\n\n");
+    while(1){
+
+            int counter = contador +1;
+
+            fgets(nomeAluno, 20, stdin);
+            if(nomeAluno[0] == '\n'){
+                fprintf(fpAlunos,"\n");
+                break;
+            }
+            fprintf(fpAlunos,"%d %s",counter,nomeAluno);
+
+            contador++;
+    }
+    fprintf(fpAlunos,"Total de %d Alunos\n",contador);
+
+    fclose(fpAlunos);
+    return 0;
+}*/
+
+//Questão 3:
+/*
+typedef struct{
+    int NumeroProjeto;
+    char NomeProjeto[51];
+    char Responsavel[51];
+    double Custo;
+}Projeto;
+
+Projeto projetoAtual(){
+        Projeto P;
+        printf("Digite o Numero do Projeto: ");
+        scanf("%d",&P.NumeroProjeto);
+        printf("Digite o Nome do Projeto: ");
+        scanf(" %[^\n]",P.NomeProjeto);
+        printf("Digite o Responsavel pelo Projeto: ");
+        scanf(" %[^\n]",P.Responsavel);
+        printf("Digite o Custo do Projeto: ");
+        scanf("%lf",&P.Custo);
+        return P;
+    }
+
+int main(){
+    FILE *fpProjeto;
+    fpProjeto = fopen("Projeto.bin","ab");
+    int continuar = 1;
+    while(continuar){
+        Projeto p1;
+        p1 = projetoAtual();
+        fwrite(&p1,sizeof(Projeto),1,fpProjeto);
+        printf("\n");
+        printf("Deseja Cadastrar outro? 1 - Sim / 0 - Nao: ");
+        scanf("%d",&continuar);
+        printf("\n");
+    }
+    fclose(fpProjeto);
+    return 0;
+}*/
+
+//Questão 4:
+/*
+typedef struct{
+    int NumeroProjeto;
+    char NomeProjeto[51];
+    char Responsavel[51];
+    double Custo;
+}Projeto;
+
+void excluirProjeto(){
+    FILE *fpProjeto;
+    Projeto P;
+    Projeto Vazio = {0,"","",0.0};
+    int numBusca;
+    int encontrado = 0;
+    fpProjeto = fopen("Projeto.bin","rb+");
+    printf("Digite o Numero do Projeto Para Excluir: ");
+    scanf("%d",&numBusca);
+    while (fread(&P, sizeof(Projeto),1,fpProjeto)==1){
+        if(P.NumeroProjeto == numBusca){
+            printf("Projeto encontrado. Deseja continuar a exclusão? 1-Sim/0-Nao: ");
+            scanf("%d", &encontrado);
+            if(encontrado == 1){
+                fseek(fpProjeto, -sizeof(Projeto),SEEK_CUR);
+                fwrite(&Vazio, sizeof(Projeto),1,fpProjeto);
+            } else {
+                printf("Operacao cancelada");
+            }
+            break;
+        }
+    }
+    fclose(fpProjeto);
+}
+
+int main(){
+    excluirProjeto();
+    return 0;
+}*/

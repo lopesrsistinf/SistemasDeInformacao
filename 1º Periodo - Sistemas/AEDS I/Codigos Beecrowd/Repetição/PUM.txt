@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main(){
+    int N,count=1;
+    scanf("%d",&N);
+    for (int i=0; i<N;i++){
+        for (int j=0;j<4;j++){
+            if(j<3){
+                printf("%d ",count);
+            } else if(j==3){
+                printf("PUM\n");
+            }
+            count++;
+        }
+    }
+    return 0;
+}

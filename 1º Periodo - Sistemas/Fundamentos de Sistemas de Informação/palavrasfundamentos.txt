@@ -1,0 +1,15 @@
+CRM - Customer Relationship Management: É uma estratégia de negócios focada no cliente, que mira aumentar a satisfação e lealdade do cliente oferencendo uma maneira mais responsiva e customizada de serviços para cada cliente. (tradução própria) (L. Ryals and S. Knox,2001).
+
+Automação: Integração de conhecimentos substituindo a observação, os esforços e as decisões humanas por dispositivos (mecânicos, elétricos e eletrônicos, entre outros) e softwares concebidos por meio de especificações funcionais e tecnológicas, com uso de metodologias. (Rosário, João Maurício. 2021).
+
+C#: É uma linguagem de programação  simples, moderna, orientada a objetos, de digitação segura, que possui suas raízes na linguagem C, e imediatamente familiar aos programadores C, C++ e Java. (tradução própria)(Hejlsberg, Wiltamuth, Goide. 2006).
+
+Compilador: 
+
+
+
+
+
+
+
+

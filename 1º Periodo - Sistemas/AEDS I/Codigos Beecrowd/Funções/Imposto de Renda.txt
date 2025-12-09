@@ -1,0 +1,10 @@
+#include <stdio.h>
+ 
+int main(){
+    double renda,imposto;
+    scanf("%lf",&renda);
+    (renda >= 0.00 && renda <= 2000.00) ? imposto = 0 : (renda >= 2000.01 && renda <= 3000.00) ? imposto = (renda - 2000) * 0.08 : (renda >= 3000.01 && renda <= 4500.00) ? imposto = ((1000 * 0.08) + ((renda - 3000)*0.18)) : (renda >= 4500.00) ? imposto = ((renda-4500) * 0.28) + 350 : printf("Fora do padrao");
+    (renda > 2000) ? printf("R$ %.2lf\n",imposto) : printf("Isento\n");
+
+    return 0;
+}

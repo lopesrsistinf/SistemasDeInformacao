@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int N,termoIni=0,termoAtual=1,proximoTermo;
+    scanf("%d",&N);
+    if (N<46)
+    {
+        for(int i=0; i<N; i++)
+        {
+            if(i == 0)
+            {
+                printf("%d",termoIni);
+            }
+            else if(i==1)
+            {
+                printf(" %d",termoAtual);
+            }
+            else
+            {
+                proximoTermo = termoIni + termoAtual;
+                printf(" %d",proximoTermo);
+                termoIni = termoAtual;
+                termoAtual = proximoTermo;
+            }
+        }
+    }
+    printf("\n");
+    return 0;
+}

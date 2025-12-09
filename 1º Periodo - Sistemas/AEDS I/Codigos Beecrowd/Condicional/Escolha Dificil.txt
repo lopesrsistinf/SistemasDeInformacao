@@ -1,0 +1,41 @@
+#include <stdio.h>
+ 
+int main()
+{
+    int frangoQ,bifeQ,massaQ,frangoD,bifeD,massaD,total,franguim,bifim,massinha;
+    scanf("%d %d %d\n%d %d %d",&frangoQ,&bifeQ,&massaQ,&frangoD,&bifeD,&massaD);
+    if((frangoQ >= 0) && (frangoD >= 0) && (massaQ >= 0) && (massaD >= 0) && (bifeQ >= 0) && (bifeD >= 0) && (frangoQ <= 100) && (frangoD <= 100) && (massaQ <= 100) && (massaD <= 100) && (bifeQ <= 100) && (bifeD <= 100))
+    {
+        franguim = frangoD-frangoQ;
+        bifim = bifeD-bifeQ;
+        massinha = massaD - massaQ;
+        if (franguim < 0)
+        {
+            franguim = 0;
+        }
+        else if(franguim >= 0)
+        {
+            franguim = frangoD-frangoQ;
+        }
+        if (bifim < 0)
+        {
+            bifim = 0;
+        }
+        else if (bifim >= 0)
+        {
+            bifim = bifeD-bifeQ;
+        }
+        if (massinha < 0)
+        {
+            massinha = 0;
+        }
+        else if (massinha >= 0)
+        {
+            massinha = massaD-massaQ;
+        }
+        total = franguim + bifim + massinha;
+        printf("%d\n",total);
+
+    }
+    return 0;
+}

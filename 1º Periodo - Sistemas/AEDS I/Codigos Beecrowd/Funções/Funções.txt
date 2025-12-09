@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int calcular_rafael(int x, int y) {
+    return 9 * x * x + y * y;
+}
+
+int calcular_beto(int x, int y) {
+    return 2 * x * x + 25 * y * y;
+}
+
+int calcular_carlos(int x, int y) {
+    return -100 * x + y * y * y;
+}
+
+int main() {
+    int N;
+    
+    if (scanf("%d", &N) != 1) return 1;
+
+    for (int i = 0; i < N; i++) {
+        int x, y;
+        int resultado_r, resultado_b, resultado_c;
+        int maior_resultado;
+        char *vencedor;
+
+        if (scanf("%d %d", &x, &y) != 2) break;
+
+        resultado_r = calcular_rafael(x, y);
+        resultado_b = calcular_beto(x, y);
+        resultado_c = calcular_carlos(x, y);
+
+        maior_resultado = resultado_r;
+        vencedor = "Rafael";
+        
+        if (resultado_b > maior_resultado) {
+            maior_resultado = resultado_b;
+            vencedor = "Beto";
+        }
+
+        if (resultado_c > maior_resultado) {
+            vencedor = "Carlos";
+        }
+        printf("%s ganhou\n", vencedor);
+    }
+
+    return 0;
+}

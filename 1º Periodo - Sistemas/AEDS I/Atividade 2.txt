@@ -1,0 +1,92 @@
+Questão 1/2 = 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+int Num1, Num2, Resultado = 0;
+char Operacao;
+do{
+printf("\nDigite um numero inteiro seguido de uma operação de adição, subtração, multiplicação, divisão, resto, raiz, potência");
+printf(" \ne outro numero inteiro (Exemplo: 56 + 34) ou 0 0 0 para sair: ");
+scanf("%d %c %d", &Num1, &Operacao, &Num2);
+if (Num1 == 0) break;
+if (Operacao == '+') Resultado = Num1 + Num2;
+if (Operacao == '-') Resultado = Num1 - Num2;
+if (Operacao == '*') Resultado = Num1 * Num2;
+if (Operacao == '/') Resultado = Num1 / Num2;
+if (Operacao == '%') Resultado = Num1 % Num2;
+if (Operacao == '@') Resultado = sqrt(Num1);
+if (Operacao == '#') Resultado = pow(Num1,(1.0/Num2));
+if (Operacao == '^') Resultado = pow(Num1,Num2);
+printf("\n\n\n %d %c %d = %d\n\n\n", Num1, Operacao, Num2, Resultado);
+} while (1);
+return 0;
+}
+
+Questão 3 = 
+
+int main(){
+    int NumeroMovimentacao,NumerodoDocumento;
+    float Valor;
+    char Carac;
+    printf("Digite o Número da Movimentação: \n");
+    scanf("%d",&NumeroMovimentacao);
+    printf("Digite C se for crédito ou D se for débito: \n");
+    scanf("%s",&Carac);
+    printf("Digite o valor: \n");
+    scanf("%f",&Valor);
+    printf("Digite o Número do Documento: \n");
+    scanf("%d",&NumerodoDocumento);
+    printf("Numero   D/C   Valor   Documento\n   %04d  %c   %7.2f   %3d",NumeroMovimentacao,Carac,Valor,NumerodoDocumento);
+    return 0;
+}
+
+Questão 4 = 
+
+int main(){
+    int num1,num2,num3,maior,menor;
+    double media;
+    printf("Digite os valores de A, B e C: ");
+    scanf("%d %d %d",&num1,&num2,&num3);
+    media = (num1 + num2 + num3)/3;
+    if (num1 > num2 && num1 > num3) maior = num1;
+    else if (num2 > num1 && num2 > num3) maior = num2;
+    else maior = num3;
+    if (num1 < num2 && num1 < num3) menor = num1;
+    else if (num2 < num1 && num2 < num3) menor = num2;
+    else menor = num3;
+    printf("O maior valor e: %d\nO menor valor e: %d\nA media dos numeros e: %.2lf",maior,menor,media);
+    return 0;
+}
+
+Questão 5 = 
+
+int main(){
+    int num,fatorial,i;
+    printf("Digite um valor: ");
+    scanf("%d",&fatorial);
+    num = fatorial;
+    for (i = fatorial-1; i>0; i--){
+        fatorial *= i;
+    }
+    printf("O fatorial de %d! e: %d",num,fatorial);
+    return 0;
+}
+
+Questão 6 = 
+
+int main(){
+    double primeiro, razao, soma, termo;
+    primeiro = 2.5;
+    razao = -2.5;
+    soma = 0;
+    termo = primeiro;
+    for (int i = 0; i<10;i++){
+        soma += termo;
+        termo *= razao;
+    }
+    printf("A soma dos 10 elementos e: %lf\n",soma);
+    return 0;
+}

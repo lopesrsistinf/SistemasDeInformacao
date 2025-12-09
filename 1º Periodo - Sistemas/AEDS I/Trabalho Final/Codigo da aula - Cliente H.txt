@@ -1,0 +1,16 @@
+#ifndef CLIENTE_H_INCLUDED
+#define CLIENTE_H_INCLUDED
+
+struct cliente
+{
+    int codigo;
+    char nome[51];
+    double limite;
+    char telefone[21];
+};
+
+struct cliente digitarCliente();
+void imprimirCliente(struct cliente C);
+void menuCliente();
+
+#endif // CLIENTE_H_INCLUDED

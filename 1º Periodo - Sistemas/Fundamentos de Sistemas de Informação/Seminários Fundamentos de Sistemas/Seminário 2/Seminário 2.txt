@@ -1,0 +1,110 @@
+Seminário II - Segurança em sistemas de informação.
+
+Período das Apresentações: 13/11/2025 a 27/11/2025
+Objetivo do Seminário: desenvolver a capacidade de pesquisa, análise crítica e apresentação criativa sobre episódios reais de vazamento de dados, compreendendo impactos e medidas preventivas.
+
+Orientações:
+
+1. Escolha um país distinto dos demais colegas.
+2. Pesquise 3 episódios reais de vazamento de dados ocorridos nesse país. Para cada episódio, responda:
+a) O que aconteceu (descrição do incidente)
+b) Prejuízos causados (financeiros, reputacionais, sociais etc.)
+c) Consequências para as vítimas e para a organização envolvida
+d) Ações corretivas tomadas após o vazamento
+e) Medidas preventivas existentes (ou que deveria existir) antes do incidente ou que poderiam ter evitado o problema
+3. Prepare uma apresentação de 15 minutos.
+4. Use um recurso ou método criativo para expor o conteúdo — por exemplo: vídeo, animação, storytelling, infográfico, etc.
+5. Ordem de apresentação: alfabética pelo nome do aluno.
+6. Critérios de avaliação: será considerada a clareza, profundidade da pesquisa, criatividade na apresentação e capacidade de responder às perguntas.
+
+Israel - Ramon
+
+Episódio 1: O Ataque à Seguradora Shirbit (Dezembro de 2020)
+a) O que aconteceu (descrição do incidente)
+Em dezembro de 2020, a seguradora israelense Shirbit foi alvo de um massivo ataque de ransomware pelo grupo de hackers "Black Shadow". Os invasores roubaram uma grande quantidade de dados sensíveis de clientes, incluindo documentos de identidade, registros médicos, informações de pagamento e outros dados pessoais. O grupo exigiu um resgate de quase US$ 1 milhão em Bitcoin para não vazar as informações. Após a recusa da empresa em pagar, os hackers começaram a divulgar os dados em lotes na internet, incluindo informações de funcionários públicos e do sistema judiciário que eram clientes da seguradora.
+
+b) Prejuízos causados (financeiros, reputacionais, sociais etc.)
+
+Reputacionais: A confiança na Shirbit foi severamente abalada. O fato de uma seguradora, que lida com informações altamente sensíveis, não ter conseguido proteger os dados de seus clientes causou um dano imenso à sua imagem.
+
+Financeiros: Além dos custos diretos para investigar o incidente, fortalecer a segurança e lidar com as consequências legais, a empresa sofreu com a perda de clientes. O resgate não foi pago, mas os custos indiretos superaram em muito o valor exigido.
+
+Sociais e Políticos: O vazamento de dados de figuras públicas, incluindo funcionários do judiciário e da segurança, gerou uma crise de confiança na capacidade do país de proteger infraestruturas críticas e dados de seus cidadãos.
+
+c) Consequências para as vítimas e para a organização envolvida
+
+Para as vítimas: Os clientes tiveram seus dados mais íntimos expostos, ficando vulneráveis a roubo de identidade, fraudes, chantagens e constrangimento público. A exposição de registros médicos e informações pessoais causou grande angústia.
+
+Para a organização: A Shirbit enfrentou uma investigação rigorosa da Autoridade de Proteção de Privacidade de Israel e da Autoridade do Mercado de Capitais. A empresa foi declarada responsável por negligência em segurança, resultando em sanções e na possibilidade de ações judiciais coletivas por parte das vítimas.
+
+d) Ações corretivas tomadas após o vazamento
+Após o ataque, a Autoridade do Mercado de Capitais, Seguros e Poupança de Israel ordenou que a Shirbit implementasse um plano de recuperação abrangente. Isso incluiu a contratação de especialistas em cibersegurança para investigar a fundo a violação, a reconstrução de sua infraestrutura de TI com protocolos de segurança mais rígidos e a melhoria dos sistemas de monitoramento e resposta a incidentes.
+
+e) Medidas preventivas existentes (ou que deveriam existir)
+A investigação revelou que a Shirbit possuía falhas de segurança básicas. A empresa não tinha um Diretor de Segurança da Informação (CISO) em tempo integral, utilizava senhas fracas em sistemas críticos e não havia implementado a autenticação de dois fatores (2FA) em muitos de seus serviços. A falta de segmentação de rede adequada permitiu que os hackers se movessem lateralmente com facilidade após a invasão inicial. A implementação dessas medidas básicas de "higiene cibernética" poderia ter evitado ou, no mínimo, mitigado significativamente o impacto do ataque.
+
+Fontes:
+
+The Times of Israel: "Insurance firm Shirbit hit by major hack, client info posted online" - 1 de dezembro de 2020.
+
+Calcalistech: "Regulator finds severe deficiencies in Shirbit's information security" - 21 de junho de 2021.
+
+Episódio 2: O Ataque ao Hillel Yaffe Medical Center (Outubro de 2021)
+a) O que aconteceu (descrição do incidente)
+Em outubro de 2021, o Hillel Yaffe Medical Center, em Hadera, foi vítima de um ataque de ransomware que paralisou completamente seus sistemas de TI. O ataque criptografou servidores e estações de trabalho, forçando o hospital a cancelar cirurgias não urgentes, transferir pacientes para outras instituições e retornar ao uso de registros em papel. Os hackers exigiram um resgate multimilionário para descriptografar os arquivos.
+
+b) Prejuízos causados (financeiros, reputacionais, sociais etc.)
+
+Operacionais: O principal prejuízo foi a interrupção crítica dos serviços de saúde. A incapacidade de acessar prontuários eletrônicos, resultados de exames e sistemas de agendamento colocou a vida de pacientes em risco.
+
+Financeiros: Os custos foram enormes, envolvendo a resposta ao incidente, a contratação de equipes de cibersegurança, a compra de novos equipamentos e o longo processo de restauração dos sistemas a partir de backups. Além disso, houve perda de receita devido aos procedimentos cancelados.
+
+Sociais: O ataque gerou pânico e destacou a vulnerabilidade da infraestrutura de saúde de Israel a ataques cibernéticos, levantando um debate nacional sobre a segurança de serviços essenciais.
+
+c) Consequências para as vítimas e para a organização envolvida
+
+Para as vítimas (pacientes): Pacientes tiveram seus tratamentos adiados, o que em alguns casos poderia agravar suas condições de saúde. A falta de acesso ao histórico médico completo também aumentou o risco de erros médicos.
+
+Para a organização: O hospital levou semanas para restaurar parcialmente seus sistemas e meses para uma recuperação completa. O incidente desencadeou uma investigação do Ministério da Saúde e da Diretoria Nacional de Cibernética de Israel, que passaram a exigir padrões de segurança mais elevados para todas as instituições de saúde.
+
+d) Ações corretivas tomadas após o vazamento
+O hospital, com a ajuda de agências de segurança nacionais e empresas privadas, trabalhou para isolar os sistemas afetados e restaurá-los gradualmente a partir de backups. A infraestrutura de rede foi reconstruída com medidas de segurança aprimoradas. O Ministério da Saúde de Israel anunciou um plano de investimento de milhões de shekels para fortalecer a cibersegurança em todos os hospitais do país.
+
+e) Medidas preventivas existentes (ou que deveriam existir)
+Investigações sugeriram que o ponto de entrada pode ter sido uma vulnerabilidade em um sistema legado ou um ataque de phishing bem-sucedido contra um funcionário. Medidas preventivas mais robustas, como um programa contínuo de conscientização e treinamento de funcionários contra phishing, gerenciamento rigoroso de patches para corrigir vulnerabilidades de software e uma arquitetura de "confiança zero" (Zero Trust), poderiam ter dificultado a entrada dos invasores e limitado a extensão do dano.
+
+Fontes:
+
+Reuters: "Israeli hospital under cyber attack, patient data may be compromised" - 13 de outubro de 2021.
+
+Haaretz: "Ransomware Attack on Israeli Hospital Grinds Treatment to a Halt" - 14 de outubro de 2021.
+
+Episódio 3: O Vazamento de Dados do Site de Namoro Atraf (Outubro de 2021)
+a) O que aconteceu (descrição do incidente)
+Também em outubro de 2021, o mesmo grupo "Black Shadow" que atacou a Shirbit reivindicou a responsabilidade por um ataque à empresa israelense de hospedagem na web Cyberserve. A violação comprometeu os dados de vários clientes da Cyberserve, sendo o mais notável o Atraf, um popular site de namoro LGBTQ+. Os hackers vazaram informações altamente pessoais de cerca de 1.000 usuários do Atraf, incluindo nomes, localizações e status de HIV. A ação foi descrita como uma forma de extorsão digital contra a Cyberserve.
+
+b) Prejuízos causados (financeiros, reputacionais, sociais etc.)
+
+Sociais e Pessoais: Este foi o prejuízo mais grave. A exposição pública de informações tão íntimas, especialmente em uma comunidade que pode enfrentar discriminação, causou danos psicológicos e sociais imensuráveis às vítimas. Divulgar o status de HIV de uma pessoa sem consentimento é uma violação grave de privacidade.
+
+Reputacionais: A reputação do Atraf e da Cyberserve foi destruída. Usuários confiaram suas informações mais sensíveis à plataforma, que falhou em protegê-las.
+
+Financeiros: A Cyberserve perdeu clientes e enfrentou possíveis litígios. O site Atraf, por sua vez, tornou-se inutilizável pela perda total de confiança de sua base de usuários.
+
+c) Consequências para as vítimas e para a organização envolvida
+
+Para as vítimas: As vítimas enfrentaram o risco de chantagem, discriminação, estigma social e outing (serem "tiradas do armário" contra sua vontade). Associações de direitos LGBTQ+ em Israel relataram um aumento nos pedidos de ajuda psicológica e em linhas diretas de emergência.
+
+Para a organização: A Cyberserve essencialmente deixou de operar devido ao dano reputacional. O Atraf, como seu cliente, teve sua operação inviabilizada. O caso gerou uma forte reação pública e exigências por regulamentações mais rígidas sobre a proteção de dados de natureza sensível.
+
+d) Ações corretivas tomadas após o vazamento
+A resposta imediata foi limitada, uma vez que os dados já haviam sido vazados. Organizações de apoio à comunidade LGBTQ+ mobilizaram-se para oferecer suporte psicológico e legal às vítimas. A Autoridade de Proteção de Privacidade de Israel iniciou uma investigação sobre as falhas de segurança da Cyberserve, focando na sua responsabilidade como provedora de infraestrutura.
+
+e) Medidas preventivas existentes (ou que deveriam existir)
+A Cyberserve, como empresa de hospedagem, deveria ter implementado controles de segurança de alto nível. Medidas cruciais que falharam incluem: criptografia robusta de dados em repouso (para proteger os bancos de dados mesmo em caso de acesso não autorizado), monitoramento contínuo de atividades suspeitas na rede e políticas de segurança rigorosas impostas a seus clientes. Para o Atraf, a anonimização ou pseudo-anonimização de dados do usuário poderia ter limitado o dano, desassociando identidades reais de informações sensíveis.
+
+Fontes:
+
+BBC News: "Black Shadow hackers leak data of Israeli LGBTQ dating site users" - 30 de outubro de 2021.
+
+The Jerusalem Post: "Hackers publish sensitive info of users on Israeli LGBTQ dating app" - 30 de outubro de 2021.

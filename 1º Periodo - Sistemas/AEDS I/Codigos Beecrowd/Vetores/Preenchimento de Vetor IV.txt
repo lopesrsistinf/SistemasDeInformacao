@@ -1,0 +1,34 @@
+#include <stdio.h>
+ 
+int main() {
+    int N,par[5],impar[5],contadorPar=0,contadorImpar=0;
+    for (int i = 0; i < 15; i++) {
+        scanf("%d", &N);
+        if (N % 2 == 0) {
+            if (contadorPar == 5) {
+                for(int j = 0;j<5;j++){
+                    printf("par[%d] = %d\n",j,par[j]);
+                }
+                contadorPar = 0;
+            }
+            par[contadorPar] = N;
+            contadorPar++;
+        } else {
+            if (contadorImpar == 5) {
+                for(int j = 0;j<5;j++){
+                    printf("impar[%d] = %d\n",j,impar[j]);
+                }
+                contadorImpar = 0;
+            }
+            impar[contadorImpar] = N;
+            contadorImpar++;
+        }
+    }
+    for(int j = 0;j<contadorImpar;j++){
+        printf("impar[%d] = %d\n",j,impar[j]);
+    }
+    for(int j = 0;j<contadorPar;j++){
+        printf("par[%d] = %d\n",j,par[j]);
+    }
+    return 0;
+}

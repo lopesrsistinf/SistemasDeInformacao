@@ -1,0 +1,11 @@
+#include <stdio.h>
+ 
+int main() {
+    int tempo,velMed;
+    double litros,distancia;
+    scanf("%d %d", &tempo,&velMed);
+    distancia = velMed * tempo;
+    litros = distancia/12;
+    printf("%.3lf\n",litros);
+    return 0;
+}

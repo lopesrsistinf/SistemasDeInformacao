@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int C;
+    char strA[20];
+    char strB[20];
+    scanf("%d", &C);
+    for (int i = 0; i < C; i++) {
+        scanf("%s %s", strA, strB);
+        if (strcmp(strA, strB) == 0) {
+            printf("empate\n");
+        } 
+        else if ((strcmp(strA, "tesoura") == 0 && strcmp(strB, "papel") == 0) ||
+                   (strcmp(strA, "papel") == 0 && strcmp(strB, "pedra") == 0) ||
+                   (strcmp(strA, "pedra") == 0 && strcmp(strB, "lagarto") == 0) ||
+                   (strcmp(strA, "lagarto") == 0 && strcmp(strB, "spock") == 0) ||
+                   (strcmp(strA, "spock") == 0 && strcmp(strB, "tesoura") == 0) ||
+                   (strcmp(strA, "tesoura") == 0 && strcmp(strB, "lagarto") == 0) ||
+                   (strcmp(strA, "lagarto") == 0 && strcmp(strB, "papel") == 0) ||
+                   (strcmp(strA, "papel") == 0 && strcmp(strB, "spock") == 0) ||
+                   (strcmp(strA, "spock") == 0 && strcmp(strB, "pedra") == 0) ||
+                   (strcmp(strA, "pedra") == 0 && strcmp(strB, "tesoura") == 0)) 
+        {
+            printf("rajesh\n");
+        } 
+        else {
+            printf("sheldon\n");
+        }
+    }
+    return 0;
+}

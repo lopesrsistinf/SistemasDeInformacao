@@ -1,0 +1,22 @@
+#include <stdio.h>
+ 
+int main(){
+    int T,PA,PB,contador;
+    double G1,G2;
+    scanf("%d",&T);
+    for(int i = 0; i < T; i++){
+        scanf("%d %d %lf %lf",&PA,&PB,&G1,&G2);
+        contador = 0;
+        while (PA <= PB && contador <= 100){
+            PA += (int)(PA * G1/100);
+            PB += (int)(PB * G2/100);
+            contador++;
+        }
+        if(contador > 100){
+            printf("Mais de 1 seculo.\n");
+        } else {
+            printf("%d anos.\n",contador);
+        }
+    }
+    return 0;
+}

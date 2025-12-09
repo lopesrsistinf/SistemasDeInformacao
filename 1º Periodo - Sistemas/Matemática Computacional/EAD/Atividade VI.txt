@@ -1,0 +1,13 @@
+Atividade:
+
+Para cada uma das seguintes questões, apresente sua resposta, juntamente com a fonte confiável utilizada para respondê-la, apresente e comente, pelo menos, 3 exemplos relacionados a cada uma.
+
+1 Explique o funcionamento da Máquina de Turing e o Problema da Parada.
+
+2 Explique o que é o Problema do Programa 0.
+
+3 Explique o que são decibilidade, computabilidade e complexidade em termos matemáticos e computacionais.
+
+3 Explique o problema P x nP e seus impactos para a área da Computação e dos Sistemas de Informações.
+
+4 Explique o que é o Paradoxo de Gödel e seus impactos para a área da Computação e dos Sistemas de Informações

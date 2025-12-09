@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+ 
+int main() {
+    int T;
+    char strA[10005];
+    char strB[10005];
+    scanf("%d", &T);
+
+    for (int i = 0; i < T; i++) {
+
+        scanf("%s %s", strA, strB);
+        int total_operacoes = 0;
+        int len = strlen(strA); 
+
+        for (int j = 0; j < len; j++) {
+
+            char char_a = strA[j];
+            char char_b = strB[j];
+
+            int int_a = char_a - 'a';
+            int int_b = char_b - 'a';
+
+            int diferenca = int_b - int_a;
+
+            if (diferenca < 0) {
+                diferenca += 26;
+            }
+
+            total_operacoes += diferenca;
+        }
+
+        printf("%d\n", total_operacoes);
+    }
+
+    return 0;
+}

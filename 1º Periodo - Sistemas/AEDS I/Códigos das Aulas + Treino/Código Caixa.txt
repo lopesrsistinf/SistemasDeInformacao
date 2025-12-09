@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void DesenharCaixa(int Altura,int Largura){
+    printf("\xda");
+    for(int i = 0;i<Largura;i++){
+        printf("\xc4");
+    }
+    printf("\xbf\n");
+    for(int j = 0;j< Altura;j++){
+        printf("\xb3");
+        for(int i = 0;i<Largura;i++){
+            printf(" ");
+        }
+        printf("\xb3\n");
+    }
+    printf("\xc0");
+    for(int i = 0;i<Largura;i++){
+        printf("\xc4");
+    }
+    printf("\xd9\n");
+}
+
+int main()
+{
+    DesenharCaixa(12,10);
+    return 0;
+}

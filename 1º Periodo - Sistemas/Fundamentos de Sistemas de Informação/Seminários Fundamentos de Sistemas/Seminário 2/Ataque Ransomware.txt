@@ -1,0 +1,52 @@
+Aqui está o passo a passo de como um ataque de ransomware normalmente funciona:
+
+Fase 1: A Infiltração (O Ponto de Entrada)
+O primeiro desafio para o hacker é conseguir colocar o software malicioso (o ransomware) dentro do sistema da vítima. Os métodos mais comuns são:
+
+E-mails de Phishing: Este é o método mais popular. A vítima recebe um e-mail que parece legítimo (uma fatura, uma notificação de entrega, um alerta do banco). O e-mail contém um anexo malicioso (um arquivo .zip, .pdf, ou .doc) ou um link para um site falso. Ao clicar, a vítima, sem saber, executa o ransomware.
+
+Exploração de Vulnerabilidades: Softwares desatualizados (seja o sistema operacional, um navegador ou um programa) possuem falhas de segurança conhecidas. Hackers varrem a internet em busca de sistemas com essas "portas abertas" e as usam para injetar o ransomware diretamente, sem precisar de nenhuma ação do usuário.
+
+Protocolo de Área de Trabalho Remota (RDP): Muitas empresas usam o RDP para que funcionários acessem seus computadores de trabalho remotamente. Se as senhas forem fracas ou roubadas, os criminosos podem simplesmente "entrar" no sistema como se fossem um funcionário e executar o ataque.
+
+Downloads Comprometidos: O ransomware pode ser disfarçado de software legítimo em sites de pirataria ou em anúncios maliciosos ("malvertising").
+
+Fase 2: Execução e Comunicação
+Uma vez que o ransomware está dentro do sistema, ele age de forma silenciosa e rápida:
+
+Instalação e Persistência: O malware se instala em um local discreto no sistema e se configura para ser executado toda vez que o computador é ligado. Isso garante que, mesmo que a máquina seja reiniciada, o ataque continue.
+
+Comunicação com o Servidor de Comando e Controle (C&C): O ransomware "telefona para casa", conectando-se a um servidor controlado pelo hacker. Nessa comunicação, ele envia informações sobre a vítima e, o mais importante, gera e recebe as chaves de criptografia.
+
+Fase 3: A Criptografia (O Sequestro dos Dados)
+Esta é a fase principal do ataque.
+
+Varredura: O ransomware começa a escanear todos os discos rígidos locais, unidades de rede mapeadas e, às vezes, até mesmo backups e armazenamentos em nuvem conectados ao sistema.
+
+Criptografia: Ele procura por arquivos com extensões específicas (.docx, .xlsx, .pdf, .jpg, .png, bancos de dados, etc.) e os criptografa usando algoritmos extremamente fortes (como AES e RSA). A criptografia transforma o conteúdo dos arquivos em um código ilegível.
+
+A Chave do "Cadeado": Cada arquivo é "trancado" com uma chave de criptografia única. A chave para "destrancar" (descriptografar) todos os arquivos é enviada e armazenada apenas no servidor do hacker. Sem essa chave, é matematicamente impossível recuperar os arquivos.
+
+Eliminação de Backups: Versões mais sofisticadas do ransomware tentam encontrar e deletar backups locais (como as "Cópias de Sombra" do Windows) para impedir que a vítima restaure os dados facilmente.
+
+Fase 4: O Pedido de Resgate (A Extorsão)
+Com os arquivos sequestrados, o ataque se revela:
+
+A Nota de Resgate: Um arquivo de texto (como LEIA-ME.txt) aparece em todas as pastas com arquivos criptografados, e a imagem de fundo da área de trabalho é alterada.
+
+As Instruções: A nota informa à vítima que seus arquivos foram criptografados e que a única maneira de recuperá-los é pagando um resgate.
+
+O Pagamento: O pagamento é quase sempre exigido em criptomoedas (como Bitcoin ou Monero), pois são mais difíceis de rastrear. A nota contém o valor, o endereço da carteira para o pagamento e, geralmente, um prazo.
+
+A Ameaça: Para pressionar a vítima, os hackers estabelecem um prazo. Se o pagamento não for feito a tempo, o preço do resgate pode dobrar ou eles ameaçam deletar a chave de descriptografia para sempre.
+
+Uma Tática Moderna: A Dupla e Tripla Extorsão
+Os ataques de ransomware evoluíram. Hoje, a maioria segue um modelo de Dupla Extorsão:
+
+Antes de criptografar, os hackers primeiro roubam uma cópia dos dados mais sensíveis da vítima.
+
+A ameaça se torna dupla: "Pague o resgate para obter a chave de descriptografia E para que não vazemos seus dados confidenciais (de clientes, financeiros, segredos comerciais) na internet."
+
+Existe ainda a Tripla Extorsão, onde a ameaça se estende a clientes ou parceiros da empresa vítima, ou inclui um ataque de negação de serviço (DDoS) para tirar o site da empresa do ar.
+
+Em resumo, o processo é: infiltrar, executar, criptografar e extorquir. É um modelo de crime altamente lucrativo e eficaz, e a melhor defesa é sempre a prevenção.

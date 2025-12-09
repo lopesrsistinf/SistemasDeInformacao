@@ -1,0 +1,11 @@
+#include <stdio.h>
+ 
+int main(){
+    int N,tabuada;
+    scanf("%d",&N);
+    for (int i=1;i<=10;i++){
+        tabuada = i*N;
+        printf("%d x %d = %d\n",i,N,tabuada);
+    }
+    return 0;
+}

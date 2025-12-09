@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+int main()
+{
+
+    int idade,ano=0,mes=0,dia=0;
+    scanf("%d",&idade);
+    for (int i = idade; i > 0; i--)
+    {
+        if (dia < 29)
+        {
+            dia++;
+        }
+        else if (mes < 11)
+        {
+            mes++;
+            dia = 0;
+        }
+        else
+        {
+            ano++;
+            mes = 0;
+            dia = -5;
+        }
+        
+    }
+    printf("%d ano(s)\n%d mes(es)\n%d dia(s)\n",ano,mes,dia);
+
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+ 
+int main() {
+    char palavra[105];
+    while (scanf("%s", palavra) != EOF) {
+        int len = strlen(palavra);
+        for (int i = 0; i < len; i++) {
+            for (int k = 0; k < i; k++) {
+                printf(" ");
+            }
+            int chars_para_imprimir = len - i;
+            for (int j = 0; j < chars_para_imprimir; j++) {
+                printf("%c", palavra[j]);
+                if (j < chars_para_imprimir - 1) {
+                    printf(" ");
+                }
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    return 0;
+}

@@ -1,0 +1,14 @@
+Pessoa 8 - 
+
+- CRM (Customer Relationship Management)
+- Automação
+- C#
+- Compilador
+- DevOps
+- KPI (Key Performance Indicator)
+- Nuvem Híbrida
+- QlikView
+- Engenharia da Computação
+- Navegador Web
+- Teoria da Computação
+- GPU (Graphics Processing Unit)

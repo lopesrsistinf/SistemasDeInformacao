@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct aluno{
+    int Matricula;
+    char Nome[51];
+    char Curso[21];
+    double Mensalidade;
+};
+typedef struct aluno Aluno;
+
+int main()
+{
+    FILE *fp;
+    fp = fopen("Arquivo.txt","rb");
+    if(fp == NULL){
+        printf("Nao abriu\n");
+        exit(1);
+    }
+    Aluno a1;
+    /*a1.Matricula = 1002342123;
+    strcpy(a1.Nome,"Jose Pereira");
+    strcpy(a1.Curso,"Engenharia de Sistemas");
+    a1.Mensalidade = 2150.65;
+    fwrite(&a1,sizeof(Aluno),1,fp);*/
+    while(fread(&a1,sizeof(Aluno),1,fp)){
+        printf("Matricula: %d\n",a1.Matricula);
+        printf("Nome: %s\n",a1.Nome);
+        printf("Curso: %s\n",a1.Curso);
+        printf("Mensalidade: %.2lf\n",a1.Mensalidade);
+    }
+    //fwrite(<endereco>,<tam.bytes>,1,fp);
+    //fread(<endereco>,<tam.bytes>,1,fp);
+    //fprintf(fp,"Unimontes\n");
+    //fprintf(fp,"Sistemas de informaçao\n");
+    //fprintf(fp,"Me mata pelo amor de deus\n");
+    //fprintf(fp,"aooooooooooooooooooo potenciaaaaaaaaaaaa\n");
+    /*char Texto[100];
+    while(fscanf(fp," %[^\n]",Texto)!=EOF){
+        printf("%s\n",Texto);
+    }*/
+    /*char ch;
+    while ((ch = fgetc(fp))!=EOF){
+        printf("%c\t",ch);
+    }*/
+
+    fclose(fp);
+
+    return 0;
+}

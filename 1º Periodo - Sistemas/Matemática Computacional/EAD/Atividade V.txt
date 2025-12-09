@@ -1,0 +1,8 @@
+Atividade:
+
+crie 2 problemas (em formato textual) de modelagem matemática para cada uma das seguintes categorias: maximização (lucratividade), minimização de custos (matéria-prima e mistura).  Cada problema deve ter entre 3 e 5 variáveis e entre 4 e 6 restrições (além das restrições de não-negatividade);
+crie 3 problemas de minimização de custos de transporte sendo 1 balanceado, 1 com excesso de oferta e 1 com excesso de demanda; cada problema deve possuir, originalmente, ou seja, antes do balanceamento, no mínimo, 3 nós de origem e 3 nós de destino.
+após a criação dos problemas, monte o modelo matemático de Programação Linear para cada um dos problemas, conforme as orientações abordadas nos vídeos.
+faça a postagem no link específico desta etapa (modelagem).
+resolva cada modelo de Programação Linear utilizando a ferramenta Solver, conforme as orientações abordadas nos vídeos.
+faça a postagem no link específico desta etapa (resolução).

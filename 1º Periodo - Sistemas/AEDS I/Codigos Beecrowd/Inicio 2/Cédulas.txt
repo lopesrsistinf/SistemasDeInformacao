@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main() {
+
+    int N;
+    double troco100,troco50,troco20,troco10,troco5,troco2,troco1;
+    scanf("%d",&N);
+    troco100 = (int)N/100;
+    troco50 = (int)(N%100)/50;
+    troco20 = (int)((N%100)%50)/20;
+    troco10 = (int)(((N%100)%50)%20)/10;
+    troco5 = (int)((((N%100)%50)%20)%10)/5;
+    troco2 = (int)(((((N%100)%50)%20)%10)%5)/2;
+    troco1 = (int)((((((N%100)%50)%20)%10)%5)%2)/1;
+    printf("%d\n%.0lf nota(s) de R$ 100,00\n%.0lf nota(s) de R$ 50,00\n%.0lf nota(s) de R$ 20,00\n%.0lf nota(s) de R$ 10,00\n%.0lf nota(s) de R$ 5,00\n%.0lf nota(s) de R$ 2,00\n%.0lf nota(s) de R$ 1,00\n",N,troco100,troco50,troco20,troco10,troco5,troco2,troco1);
+    return 0;
+}

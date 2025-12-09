@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Cliente.h"
+
+
+
+int main()
+{
+int opcao;
+
+    do
+    {
+        system("cls");
+        printf("===== EMPRESA SA =====\n\n\n");
+        printf("1 - Clientes\n");
+        printf("2 - Produtos\n");
+        printf("3 - Vendas\n");
+        printf("0 - Sair\n");
+
+        printf("Insira o codigo da operacao desejada \n");
+        scanf("%d",&opcao);
+
+        if(opcao==1){
+               menuCliente();
+        }
+
+    }while(opcao>=1 && opcao<=3);
+
+    return 0;
+}
+
+
+
+
+
+/*   for(int i=0;i<100;i++){
+     printf ("Digite um para cadastrar um cliente ou zero para encerrar\n");
+     scanf("%d",&val);
+     if (val == 0){break;}
+     cont++;
+     vet[i]=digitarCliente();
+    }
+
+    for (int j=0;j<cont;j++){
+            printf("\n");
+    imprimirCliente(vet[j]);
+    printf("\n");
+    }
+printf("\n\ntotal de clientes cadastrados: %d\n",cont);*/
+
+/*struct cliente
+{
+    int codigo;
+    char nome[51];
+    double limite;
+    char telefone[21];
+};*/
+
+
+/*struct cliente digitarCliente()
+{
+    struct cliente C;
+    printf("Codigo: \n");
+    scanf("%d",&C.codigo);
+    printf("Nome: \n");
+    scanf(" %[^\n]",C.nome);
+    printf("Limite: \n");
+    scanf("%lf",&C.limite);
+    printf("Telefone: \n");
+    scanf(" %[^\n]",C.telefone);
+
+    return C;
+
+
+};
+
+
+void imprimirCliente(struct cliente C)
+{
+    printf("%6d ",C.codigo);
+    printf("%-20s ",C.nome);
+    printf("%10.2lf ",C.limite);
+    printf("%-20s",C.telefone);
+
+}*/

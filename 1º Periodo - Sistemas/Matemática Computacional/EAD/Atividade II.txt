@@ -1,0 +1,13 @@
+Atividade:
+
+Para cada uma das seguintes questões, apresente sua resposta, juntamente com a fonte confiável utilizada para respondê-la, apresente e comente, pelo menos, 3 exemplos relacionados a cada uma.
+
+1 Diferencie lógica proposicional de lógica de predicados.
+
+2 Para a lógica de predicados, explique o que são objetos, predicados e relações.
+
+3 Indique, explique e exemplifique os diferentes tipos de quantificadores em lógica de predicados.
+
+4 Indique, explique, categorize e exemplifique o que são falácias.
+
+Sugere-se a utilização do material a seguir disponibilizado, embora outros de sua escolha possam ser também adicionados.

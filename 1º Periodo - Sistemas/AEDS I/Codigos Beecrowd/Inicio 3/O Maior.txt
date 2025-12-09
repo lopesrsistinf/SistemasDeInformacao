@@ -1,0 +1,18 @@
+#include <stdio.h>
+ 
+int main() {
+ 
+    int a,b,c,MaiorAB,MaiorAC,MaiorBC;
+    scanf("%d %d %d",&a,&b,&c);
+    MaiorAB = (a+b+abs(a-b))/2;
+    MaiorAC = (a+c+abs(a-c))/2;
+    MaiorBC = (b+c+abs(b-c))/2;
+    if (MaiorAB == a && MaiorAC == a){
+        printf("%d eh o maior\n",a);
+    } else if (MaiorAB == b && MaiorBC == b){
+        printf("%d eh o maior\n",b);
+    } else {
+        printf("%d eh o maior\n",c);
+    }
+    return 0;
+}

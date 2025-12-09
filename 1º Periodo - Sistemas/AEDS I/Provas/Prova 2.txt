@@ -1,0 +1,126 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Questão 2:
+
+int main()
+{
+    int i;
+    char N[3][50];
+    char Nome[101];
+    strcpy(Nome, "");
+    for(i = 0; i < 3; i++)
+    {
+        scanf("%s", N[i]);
+        if(strcmp(N[i], "Joao") == 0) strcat(Nome, "Jose");
+        else if(strcmp(N[i], "Jose") == 0) strcat(Nome, "Joao");
+        else strcat(Nome, N[i]);
+        strcat(Nome, " ");
+    }
+    strcat(Nome, N[2]);
+    printf("\n\n%s\n%d\n",Nome, strlen(Nome));
+    return 0;
+}
+
+//Questão 3:
+
+int main()
+{
+    int N[3][10]={0};
+
+    for(int i = 0; i<3;i++){
+        for (int j=0; j<10; j++){
+
+            if(i==0 && j == 0){
+                N[0][0] = 100;
+                printf(" %d",N[i][j]);
+            }
+            else if (i!=0 || j!=0){
+                N[i][j] = N[i][j-1] + 10;
+                printf(" %d",N[i][j]);
+            }
+
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Questão 4:
+
+int contadorDeAs(char strA[], char strB[]) {
+    int contadorA = 0, contadorB = 0,soma;
+    for (int i = 0; i < strlen(strA); i++) {
+        if (strA[i] == 'a' || strA[i] == 'A') {
+            contadorA++;
+        }
+    }
+    for (int i = 0; i < strlen(strB); i++) {
+        if (strB[i] == 'a' || strB[i] == 'A') {
+            contadorB++;
+        }
+    }
+    soma = contadorA + contadorB;
+    printf("Contador de As da Primeira: %d\nContador de As da Segunda: %d\n", contadorA, contadorB);
+    return soma;
+}
+
+int main(){
+    char strA[100],strB[100];
+    int somaTotal;
+    fgets(strA,100,stdin);
+    fgets(strB,100,stdin);
+    somaTotal = contadorDeAs(strA,strB);
+    printf("Soma dos As de Ambas: %d\n",somaTotal);
+    return 0;
+}
+
+//Questão 5:
+
+typedef struct{
+    int Numero;
+    char Nome[101];
+    char Cargo[101];
+    double Salario;
+}Empregado;
+
+void digiteDados(Empregado *a){
+    printf("Digite o numero: ");
+    scanf("%d", &a->Numero);
+    printf("Digite o nome: ");
+    scanf(" %100[^\n]", a->Nome);
+    printf("Digite o cargo: ");
+    scanf(" %100[^\n]", a->Cargo);
+    printf("Digite o salario: ");
+    scanf("%lf", &a->Salario);
+    scanf("%*[^\n]");
+    scanf("%*c");
+    printf("\n");
+}
+
+double valorINSS(Empregado a){
+    double valorINSS;
+    if(a.Salario <= 1800){
+        valorINSS = a.Salario*0.08;
+    } else if (a.Salario >1800 && a.Salario <= 3500){
+        valorINSS = a.Salario*0.1;
+    } else {
+        valorINSS = a.Salario*0.11;
+    }
+    return valorINSS;
+}
+
+int main(){
+    Empregado a[5];
+    double totalINSS = 0;
+    for(int i = 0; i < 5;i++){
+        digiteDados(&a[i]);
+    }
+    for (int j = 0; j < 5; j++){
+        totalINSS += valorINSS(a[j]);
+    }
+    printf("Valor total INSS: %.2lf",totalINSS);
+    return 0;
+}
+

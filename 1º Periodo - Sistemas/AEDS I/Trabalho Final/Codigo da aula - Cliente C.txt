@@ -1,0 +1,155 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Cliente.h"
+#include "Interface.h"
+#include "Interface.c"
+
+FILE *fpCliente = NULL;
+void AbrirArquivoCliente()
+{
+    if(fpCliente == NULL)
+    {
+        fpCliente = fopen("Cliente.txt","rb+");
+        if(fpCliente==NULL)
+        {
+            fpCliente = fopen("Cliente.txt","wb+");
+            if(fpCliente==NULL)
+            {
+                printf("Nao Abriu Cliente.txt\n");
+                exit(1);
+            }
+        }
+    }
+}
+struct cliente Clientes[100];
+int QtdeC=0;
+
+struct cliente digitarCliente()
+{
+    struct cliente C;
+    gotoxy(17,6);
+    scanf("%d",&C.codigo);
+    gotoxy(17,9);
+
+    scanf(" %[^\n]",C.nome);
+   gotoxy(17,12);
+    scanf("%lf",&C.limite);
+   gotoxy(17,15);
+    scanf(" %[^\n]",C.telefone);
+    return C;
+
+
+};
+
+
+void imprimirCliente(struct cliente C)
+{
+    printf("%6d ",C.codigo);
+    printf("%-20s ",C.nome);
+    printf("%10.2lf ",C.limite);
+    printf("%-20s",C.telefone);
+
+}
+
+
+void menuCliente(){
+    char Opcoes[][21] = {"Novo","Listar","Pesquisar","Alterar","Excluir","Sair"};
+    int Tamanho[] = {9,9,9,9,9,9,9};
+    int x[] = {6,17,28,39,50,61};
+    int y[] = {17,17,17,17,17,17};
+    int Opcao=0;
+    AbrirArquivoCliente();
+
+    char pesquisa[51];
+
+    do
+    {
+        system("cls");
+        telaCliente();
+        Opcao = Menu(Opcoes,Tamanho,6,x,y,Opcao);
+
+
+        if(Opcao==0)
+        {
+            //Clientes[QtdeC++]=digitarCliente();
+            struct cliente c1;
+            c1 = digitarCliente();
+            fseek(fpCliente,0,SEEK_END);
+            fwrite(&c1,sizeof(struct cliente),1,fpCliente);
+        }
+        else if(Opcao==1)
+        {
+            int i = 0;
+            char Titulos[101],Linhas[100][101];
+            struct cliente c1;
+            sprintf(Titulos,"%-6s %-40s %-10s %-15s","Codigo","Nome","Limite","Telefone");
+            fseek(fpCliente,0,SEEK_SET);
+            while(fread(&c1,sizeof(struct cliente),1,fpCliente)){
+                sprintf(Linhas[i],"%6d %-40s %10.2lf %-15s",c1.codigo,c1.nome,c1.limite,c1.telefone);
+                i++;
+            }
+            /*for(i=0; i<QtdeC;i++){
+                sprintf(Linhas[i],"%6d %-40s %10.2lf %-15s",Clientes[i].codigo,Clientes[i].nome,Clientes[i].limite,Clientes[i].telefone);
+            }*/
+            Lista(Titulos,Linhas,i,20,10,75,10);
+
+        }
+        else if(Opcao==2)
+        {
+            printf("Insira o nome do usuario: \n");
+            scanf(" %[^\n]",pesquisa);
+            printf("%-6s %-20s %-10s %-20s\n","Codigo","Nome","Limite","Telefone");
+            for(int k=0; k<QtdeC; k++)
+            {
+                if (strcmp(pesquisa,Clientes[k].nome)==0)
+                {
+                    imprimirCliente(Clientes[k]);
+                };
+
+            }
+            system("pause");
+
+        }
+        else if(Opcao==3)
+        {
+            break;
+        }
+        else if(Opcao==4)
+        {
+            break;
+        }
+
+
+
+
+
+
+    }
+    while(Opcao!=5);
+}
+
+
+void telaCliente(){
+textcolor(BROWN);textbackground(BLUE);
+Borda(3,2,70,18,1,1);
+textcolor(WHITE);textbackground(BLUE);
+gotoxy(4,3);
+printf("%60"," ");
+gotoxy(26,3);
+printf("CLIENTE");
+textcolor(WHITE);textbackground(BLUE);
+gotoxy(6,6);printf("CODIGO:");
+gotoxy(6,9);printf("NOME:");
+gotoxy(6,12);printf("LIMITE:");
+gotoxy(6,15);printf("TELEFONE:");
+
+
+Borda(16,5,5,2,0,0);
+Borda(16,8,50,2,0,0);
+Borda(16,11,10,2,0,0);
+Borda(16,14,20,2,0,0);
+
+
+
+}

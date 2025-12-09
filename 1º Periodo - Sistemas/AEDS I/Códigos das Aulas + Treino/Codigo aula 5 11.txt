@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+struct cliente{
+int codigo;
+char nome[51];
+double limite;
+char telefone[21];
+};
+struct cliente DigitarCliente(){
+struct cliente c;
+printf("\ncodigo: ");
+scanf("%d",&c.codigo);
+printf("\nnome: ");
+scanf("%^s",&c.nome);
+printf("\nlimite: ");
+scanf("%lf",&c.limite);
+printf("\ntelefone: ");
+scanf("%d",&c.telefone);
+return c;
+}
+void imprimirCliente(struct cliente C){
+printf("codigo: %d\n",C.codigo);
+printf("nome:%s\n",C.nome);
+printf("limite:%d\n",C.limite);
+printf("telefone:%d\n",C.telefone);
+};
+int main(){
+struct cliente c1,c2,c3;
+c1.codigo = 1000;
+strcpy(c1.nome, "Joao Silva");
+c1.limite = 5000.00;
+strcpy(c1.telefone,"3898754236");
+c2 = DigitarCliente();
+imprimirCliente(c1);
+imprimirCliente(c2);
+c3=c2;
+return 0;
+}
