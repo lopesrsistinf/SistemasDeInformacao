@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int N, K;
+    char nomes[100][21]; 
+    char aux[21];
+
+    if (scanf("%d %d", &N, &K) != 2) return 0;
+
+    for (int i = 0; i < N; i++) {
+        scanf("%s", nomes[i]);
+    }
+
+    for (int i = 0; i < N - 1; i++) {
+        for (int j = 0; j < N - i - 1; j++) {
+            if (strcmp(nomes[j], nomes[j + 1]) > 0) {
+                strcpy(aux, nomes[j]);
+                strcpy(nomes[j], nomes[j + 1]);
+                strcpy(nomes[j + 1], aux);
+            }
+        }
+    }
+
+    printf("%s\n", nomes[K - 1]);
+
+    return 0;
+}

@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char risada[51], vogais[51];
+    int i, j = 0;
+
+    if (scanf("%s", risada) != 1) return 0;
+
+    for (i = 0; risada[i] != '\0'; i++) {
+        if (risada[i] == 'a' || risada[i] == 'e' || risada[i] == 'i' || 
+            risada[i] == 'o' || risada[i] == 'u') {
+            vogais[j] = risada[i];
+            j++;
+        }
+    }
+    vogais[j] = '\0'; 
+
+    int tam = j;
+    int eh_engracada = 1; 
+
+    for (i = 0; i < tam / 2; i++) {
+        if (vogais[i] != vogais[tam - 1 - i]) {
+            eh_engracada = 0; 
+            break;
+        }
+    }
+
+    if (eh_engracada) {
+        printf("S\n");
+    } else {
+        printf("N\n");
+    }
+
+    return 0;
+}

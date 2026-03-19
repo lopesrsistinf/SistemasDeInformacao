@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n, i;
+    char palavra[10];
+
+    if (scanf("%d", &n) != 1) return 0;
+
+    for (i = 0; i < n; i++) {
+        scanf("%s", palavra);
+
+        if (strlen(palavra) == 5) {
+            printf("3\n");
+        } 
+        else {
+            int letras_one = 0;
+            if (palavra[0] == 'o') letras_one++;
+            if (palavra[1] == 'n') letras_one++;
+            if (palavra[2] == 'e') letras_one++;
+
+            if (letras_one >= 2) {
+                printf("1\n");
+            } else {
+                printf("2\n");
+            }
+        }
+    }
+
+    return 0;
+}
