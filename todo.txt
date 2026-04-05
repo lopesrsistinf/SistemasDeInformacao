@@ -1,5 +1,5 @@
 GAAL -
-Calculo - Resumir a materia
+Calculo - 
 Probabilidade - Resumir a materia
 AEDS II - Resumir a materia (ponteiro, alocação dinamica, lista encadeada, pilha)
 Metodologia -
