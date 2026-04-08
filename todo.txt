@@ -1,6 +1,6 @@
 GAAL -
 Calculo - 
-Probabilidade - Resumir a materia
+Probabilidade - 
 AEDS II - Resumir a materia (ponteiro, alocação dinamica, lista encadeada, pilha)
 Metodologia -
 TGS -
