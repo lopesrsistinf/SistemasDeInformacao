@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct lista
+{
+    int info;
+    struct lista *prox;
+};
+typedef struct lista Lista;
+
+struct fila
+{
+    struct lista *primeiro;
+    struct lista *ultimo;
+};
+typedef struct fila Fila;
+
+Fila *CriarFila()
+{
+    Fila *f;
+    f = (Fila *)malloc(sizeof(Fila));
+    f->primeiro = f->ultimo = NULL;
+    return f;
+}
+
+void FilaInserir(Fila *f, int v)
+{
+    Lista *novo = (Lista *)malloc(sizeof(Lista));
+    novo->info = v;
+    novo->prox = NULL;
+    if (f->ultimo != NULL)
+        f->ultimo->prox = novo;
+    else
+        f->primeiro = novo;
+    f->ultimo = novo;
+}
+
+int FilaVazia(Fila *f)
+{
+    return f->primeiro == NULL;
+}
+
+int FilaRetirar(Fila *f)
+{
+    int v;
+    Lista *t;
+    if (FilaVazia(f))
+    {
+        printf("Fila vazia!\n");
+        exit(1);
+    }
+    t = f->primeiro;
+    v = t->info;
+    f->primeiro = t->prox;
+    free(t);
+    if (f->primeiro == NULL)
+        f->ultimo = NULL;
+
+    return v;
+}
+
+Fila *LiberarFila(Fila *f)
+{
+    Lista *p = f->primeiro, *t;
+    while (p != NULL)
+    {
+        t = p->prox;
+        free(p);
+        p = t;
+    }
+    free(f);
+    return NULL;
+}
+
+int main()
+{
+    Fila *f = CriarFila();
+    int n, v;
+    while (1)
+    {
+        scanf("%d", &n);
+        if (n == 0)
+            break;
+        for (int i = 0; i < n; i++)
+        {
+            FilaInserir(f, i + 1);
+        }
+        printf("Discarded cards: ");
+        while (!FilaVazia(f))
+        {
+            v = FilaRetirar(f);
+            printf("%d", v);
+            v = FilaRetirar(f);
+            if (FilaVazia(f))
+                break;
+            printf(", ");
+            FilaInserir(f, v);
+        }
+        printf("\nRemaining card: %d\n", v);
+    }
+
+}

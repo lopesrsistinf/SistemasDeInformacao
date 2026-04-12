@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 1000
+
+struct pilha {
+    int VET[MAX];
+    int n;
+};
+typedef struct pilha Pilha;
+
+Pilha* CriarPilha() {
+    Pilha *p = (Pilha*)malloc(sizeof(Pilha));
+    if (p != NULL) p->n = 0;
+    return p;
+}
+
+int PilhaVazia(Pilha *p) {
+    return (p->n == 0);
+}
+
+void Push(Pilha *p, int v) {
+    if (p->n < MAX) {
+        p->VET[p->n] = v;
+        p->n++;
+    }
+}
+
+int Pop(Pilha *p) {
+    if (PilhaVazia(p)) return -1;
+    p->n--;
+    return p->VET[p->n];
+}
+
+int Topo(Pilha *p) {
+    if (PilhaVazia(p)) return -1;
+    return p->VET[p->n - 1];
+}
+
+void LiberarPilha(Pilha *p) {
+    free(p);
+}
+
+void resolve() {
+    int N, i;
+    int saida_desejada[MAX];
+
+    while (scanf("%d", &N) && N != 0) {
+        while (1) {
+            scanf("%d", &saida_desejada[0]);
+            if (saida_desejada[0] == 0) {
+                printf("\n");
+                break;
+            }
+
+            for (i = 1; i < N; i++) {
+                scanf("%d", &saida_desejada[i]);
+            }
+
+            Pilha* estacao = CriarPilha();
+            int vagoes_entrada = 1;
+            int foco_saida = 0;
+            int possivel = 1;
+
+            while (foco_saida < N) {
+             
+                if (!PilhaVazia(estacao) && Topo(estacao) == saida_desejada[foco_saida]) {
+                    Pop(estacao);
+                    foco_saida++;
+                } 
+
+                else if (vagoes_entrada <= N) {
+                    Push(estacao, vagoes_entrada);
+                    vagoes_entrada++;
+                } 
+                
+                else {
+                    possivel = 0;
+                    break;
+                }
+            }
+
+            if (possivel) printf("Yes\n");
+            else printf("No\n");
+
+            LiberarPilha(estacao);
+        }
+    }
+}
+
+int main() {
+    resolve();
+    return 0;
+}

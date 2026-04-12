@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct lista {
+    char info[20];
+    struct lista *prox;
+};
+typedef struct lista Lista;
+
+struct fila {
+    Lista *primeiro;
+    Lista *ultimo;
+};
+typedef struct fila Fila;
+
+
+Fila*CriarFila()
+{
+    Fila*f;
+    f = (Fila*)malloc(sizeof(Fila));
+    f->primeiro = f->ultimo=NULL;
+    return f;
+}
+
+void FilaInserir(Fila *f, char *v) {
+    Lista *novo = (Lista*)malloc(sizeof(Lista));
+    strcpy(novo->info, v);
+    novo->prox = NULL;
+    if (f->ultimo != NULL) f->ultimo->prox = novo;
+    else f->primeiro = novo;
+    f->ultimo = novo;
+}
+
+int FilaVazia(Fila*f)
+{
+    return f->primeiro == NULL;
+}
+
+char* FilaRetirar(Fila *f) {
+    static char v[20];
+    Lista *t = f->primeiro;
+    strcpy(v, t->info);
+    f->primeiro = t->prox;
+    if (f->primeiro == NULL) f->ultimo = NULL;
+    free(t);
+    return v;
+}
+
+Fila* LiberarFila(Fila*f)
+{
+    Lista*p = f->primeiro,*t;
+    while(p!=NULL)
+    {
+        t = p->prox;
+        free(p);
+        p = t;
+    }
+    free(f);
+    return NULL;
+}
+
+int main() {
+    Fila *filas[5] = {NULL, CriarFila(), CriarFila(), CriarFila(), CriarFila()};
+    char entrada[20];
+    int direcao = 0;
+
+    while (scanf("%s", entrada) && strcmp(entrada, "0") != 0) {
+        if (entrada[0] == '-') {
+            direcao = abs(atoi(entrada));
+        } else {
+            FilaInserir(filas[direcao], entrada);
+        }
+    }
+
+    int primeiro = 1;
+    while (!FilaVazia(filas[1]) || !FilaVazia(filas[3]) || 
+           !FilaVazia(filas[2]) || !FilaVazia(filas[4])) {
+        int ordem[] = {1, 3, 2, 4};
+        
+        for (int i = 0; i < 4; i++) {
+            int d = ordem[i];
+            if (!FilaVazia(filas[d])) {
+                if (!primeiro) printf(" ");
+                printf("%s", FilaRetirar(filas[d]));
+                primeiro = 0;
+            }
+        }
+    }
+    printf("\n");
+
+    return 0;
+}
