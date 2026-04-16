@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct arv{
+    int Info;
+    struct arv *Esq,*Dir;
+};
+typedef struct arv Arv;
+
+Arv* CriarNo(int V,Arv*Esq,Arv*Dir);
+void ImprimirArv(Arv* A);
+
+Arv* CriarNo(int V,Arv*Esq,Arv*Dir){
+    Arv*Novo = (Arv*)malloc(sizeof(Arv));
+    Novo -> Info = V;
+    Novo -> Esq = Esq;
+    Novo -> Dir = Dir;
+    return Novo;
+}
+
+void ImprimirArv(Arv*a){
+    if(a==NULL)return;
+    printf("%d\n",a->Info);
+    ImprimirArv(a->Esq);
+    ImprimirArv(a->Dir);
+}
+
+int SomaArv(Arv*A){
+    if(A == NULL) return 0;
+    return A->Info + SomaArv(A->Esq) + SomaArv(A ->Dir);
+}
+
+int QuantPares(Arv*A){
+    int contadorPar = 0;
+    if(A == NULL)return 0;    
+    if(A->Info % 2 == 0)
+        contadorPar++;
+    contadorPar = contadorPar + QuantPares(A -> Esq) + QuantPares(A -> Dir);
+    return contadorPar;
+}
+
+int main(){
+    Arv*a1,*a2,*a3,*a4,*a5,*a6,*a7,*a8,*a9,*a10,*a11,*a12;
+    a7 = CriarNo(91,NULL,NULL);
+    a11 = CriarNo(8,NULL,NULL);
+    a5 = CriarNo(20,NULL,NULL);
+    a9 = CriarNo(70,NULL,NULL);
+    a12 = CriarNo(4,NULL,NULL);
+    a8 = CriarNo(66,NULL,a11);
+    a10 = CriarNo(1,a12,NULL);
+    a4 = CriarNo(17,a7,a8);
+    a6 = CriarNo(55,a9,a10);
+    a2 = CriarNo(60,a4,NULL);
+    a3 = CriarNo(10,a5,a6);
+    a1 = CriarNo(50,a2,a3);
+    ImprimirArv(a1);
+    int a,b;
+    a = SomaArv(a1);
+    b = QuantPares(a1);
+    printf("%d\n",a);
+    printf("%d\n",b);
+
+}
