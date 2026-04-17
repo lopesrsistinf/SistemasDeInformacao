@@ -32,7 +32,7 @@ int SomaArv(Arv*A){
 
 int QuantPares(Arv*A){
     int contadorPar = 0;
-    if(A == NULL)return 0; 
+    if(A == NULL)return 0;    
     if(A->Info % 2 == 0)
         contadorPar++;
     contadorPar = contadorPar + QuantPares(A -> Esq) + QuantPares(A -> Dir);
@@ -41,6 +41,7 @@ int QuantPares(Arv*A){
 
 int main(){
     Arv*a1,*a2,*a3,*a4,*a5,*a6,*a7,*a8,*a9,*a10,*a11,*a12;
+    int soma,contPares;
     a7 = CriarNo(91,NULL,NULL);
     a11 = CriarNo(8,NULL,NULL);
     a5 = CriarNo(20,NULL,NULL);
@@ -54,10 +55,9 @@ int main(){
     a3 = CriarNo(10,a5,a6);
     a1 = CriarNo(50,a2,a3);
     ImprimirArv(a1);
-    int a,b;
-    a = SomaArv(a1);
-    b = QuantPares(a1);
-    printf("%d\n",a);
-    printf("%d\n",b);
-
+    soma = SomaArv(a1);
+    contPares = QuantPares(a1);
+    printf("Soma dos elementos: %d\n",soma);
+    printf("Quantidade de pares: %d\n",contPares);
+    return 0;
 }
