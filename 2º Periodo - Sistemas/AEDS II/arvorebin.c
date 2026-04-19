@@ -7,8 +7,13 @@ struct arv{
 };
 typedef struct arv Arv;
 
-Arv* CriarNo(int V,Arv*Esq,Arv*Dir);
-void ImprimirArv(Arv* A);
+Arv* CriarNo(int V, Arv* Esq, Arv* Dir);
+void ImprimirArv(Arv* a);
+void ImprimirArvNiv(Arv* A, int Nivel);
+Arv* BuscarArv(Arv* A, int V);
+void ImprimirLargura(Arv* A);
+int SomaArv(Arv* A);
+int QuantPares(Arv* A);
 
 Arv* CriarNo(int V,Arv*Esq,Arv*Dir){
     Arv*Novo = (Arv*)malloc(sizeof(Arv));
@@ -20,9 +25,42 @@ Arv* CriarNo(int V,Arv*Esq,Arv*Dir){
 
 void ImprimirArv(Arv*a){
     if(a==NULL)return;
-    printf("%d\n",a->Info);
+    printf("%d ",a->Info);
     ImprimirArv(a->Esq);
     ImprimirArv(a->Dir);
+}
+
+void ImprimirArvNiv(Arv*A, int Nivel){
+    if(A == NULL) return;
+    ImprimirArvNiv(A->Dir,Nivel+1);
+    printf("%*d\n",Nivel*5,A->Info);
+    ImprimirArvNiv(A->Esq,Nivel+1);
+}
+
+Arv*BuscarArv(Arv*A,int V){
+    if(A==NULL) return NULL;
+    if(A->Info==V) return A;
+    Arv*Achou = BuscarArv(A->Esq,V);
+    if(Achou==NULL)
+        Achou = BuscarArv(A->Dir,V);
+    return Achou;
+}
+
+void ImprimirLargura(Arv* A) {
+    if (A == NULL) return;
+    Arv* fila[100]; 
+    int inicio = 0; fim = 0;
+    fila[fim++] = A;
+    printf("Percurso em Largura: ");
+    while (inicio < fim) {
+        Arv* atual = fila[inicio++];
+        printf("%d ", atual->Info);
+        if (atual->Esq != NULL)
+            fila[fim++] = atual->Esq;
+        if (atual->Dir != NULL)
+            fila[fim++] = atual->Dir;
+    }
+    printf("\n");
 }
 
 int SomaArv(Arv*A){
@@ -54,10 +92,9 @@ int main(){
     a2 = CriarNo(60,a4,NULL);
     a3 = CriarNo(10,a5,a6);
     a1 = CriarNo(50,a2,a3);
-    ImprimirArv(a1);
-    soma = SomaArv(a1);
-    contPares = QuantPares(a1);
-    printf("Soma dos elementos: %d\n",soma);
-    printf("Quantidade de pares: %d\n",contPares);
+    printf("Estrutura da Arvore (Deitada):\n");
+    ImprimirArvNiv(a1, 1);
+    printf("\nSoma dos elementos: %d\n", SomaArv(a1));
+    printf("Quantidade de pares: %d\n", QuantPares(a1));
     return 0;
 }
