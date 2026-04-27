@@ -1,7 +1,7 @@
 GAAL -
 Calculo - 
 Probabilidade - 
-AEDS II - Resumir a materia (ponteiro, alocação dinamica, lista encadeada, pilha)
+AEDS II - 
 Metodologia -
 TGS -
 Arquitetura - 
