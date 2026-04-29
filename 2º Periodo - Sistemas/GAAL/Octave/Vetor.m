@@ -22,7 +22,7 @@ classdef Vetor
       end
     end
 
-    %Produto Vetorial
+    %Produto Escalar
     function r = produto(este,outro)
       if este.n != outro.n
         fprintf("Dimensões inconsistentes\n");
@@ -45,17 +45,32 @@ classdef Vetor
 
     %Angulo
     function r = angulo(este,outro)
-
+      if este.n != outro.n
+        fprintf("Dimensões Inconsistentes");
+        return
+      end
+      produtoEsc = este.produto(outro);
+      norms = este.norma() * outro.norma();
+      r = acos(produtoEsc/norms);
     end
 
     %Multiplicação Escalar
     function r = multescalar(este,c)
-
+      r = Vetor(zeros(1, este.n));
+      for i=1:este.n
+        r.x(i) = este.x(i) * c;
+      end
     end
 
     %Projeção
     function r = proj(este,outro)
-
+      if este.n != outro.n
+        fprintf("Dimensões Inconsistentes");
+        return
+      end
+      produtoEscProj = este.produto(outro);
+      normaA = outro.norma()^2;
+      r = outro.multescalar(produtoEscProj/normaA);
     end
 
     %Display do Vetor
