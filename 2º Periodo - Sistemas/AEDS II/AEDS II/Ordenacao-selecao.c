@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void Selecao(int VET[], int n)
+{
+    int i, j, menor, aux;
+    for (j = 0; j < n - 1; j++)
+    {
+        menor = j;
+        for (i = j + 1; i < n; i++)
+        {
+            if (VET[i] < VET[menor])
+            {
+                menor = i;
+            }
+        }
+        aux = VET[menor];
+        VET[menor] = VET[j];
+        VET[j] = aux;
+    }
+}
+
+int main()
+{
+    int n = 11;
+    int VET[] = {80, 70, 20, 22, 31, 43, 13, 25, 64, 73, 19};
+    Selecao(VET, n);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", VET[i]);
+    }
+    return 0;
+}

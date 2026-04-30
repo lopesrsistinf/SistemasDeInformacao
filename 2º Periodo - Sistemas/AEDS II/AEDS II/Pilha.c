@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 50
+
+struct pilha {
+    int VET[MAX];
+    int n;
+};
+typedef struct pilha Pilha;
+
+Pilha *CriarPilha();
+void Push(Pilha *p, int v);
+int Pop(Pilha *p);
+int PilhaVazia(Pilha *p);
+void LiberarPilha(Pilha *p);
+int Topo(Pilha *p);
+void ConcatenarPilha(Pilha* p1, Pilha* p2);
+Pilha* CopiaPilha(Pilha* p);
+
+Pilha* CriarPilha() {
+    Pilha *p = (Pilha*)malloc(sizeof(Pilha));
+    if (p != NULL) {
+        p->n = 0;
+    }
+    return p;
+}
+
+int PilhaVazia(Pilha *p) {
+    return (p->n == 0);
+}
+
+void Push(Pilha *p, int v) {
+    if (p->n == MAX) {
+        printf("Erro: Estouro de Pilha!\n");
+        return;
+    }
+    p->VET[p->n] = v;
+    p->n++;
+}
+
+int Pop(Pilha *p) {
+    if (PilhaVazia(p)) {
+        printf("Erro: Pilha Vazia!\n");
+        return -1;
+    }
+    p->n--;
+    return p->VET[p->n];
+}
+
+void LiberarPilha(Pilha *p) {
+    free(p);
+}
+
+int Topo(Pilha *p){
+    int v;
+    v=Pop(p);
+    Push(p,v);
+    return v;
+}
+
+void ConcatenarPilha(Pilha*p1,Pilha*p2){
+    Pilha *aux = CriarPilha();
+    int v;
+
+    while (!PilhaVazia(p2)){
+        v = Pop(p2);
+        Push(aux,v);
+    }
+    while (!PilhaVazia(aux)){
+        v = Pop(aux);
+        Push(p1,v);
+    }
+    LiberarPilha(aux);
+}
+
+Pilha* CopiaPilha(Pilha* p){
+    Pilha* copia = CriarPilha();
+    Pilha* aux = CriarPilha();
+    int v;
+    while (!PilhaVazia(p)){
+        Push(aux,Pop(p));
+
+    }
+    while(!PilhaVazia(aux)){
+        v = Pop(aux);
+        Push(p, v);
+        Push(copia, v);
+    }
+    LiberarPilha(aux);
+    return copia;
+}
+
+int main() {
+    Pilha *p1 = CriarPilha();
+    Pilha *p2 = CriarPilha();
+    Push(p1, 10.0);
+    Push(p1, 20.0);
+    Push(p1, 30.0);
+    printf("O valor no topo de p1 eh: %d\n", Topo(p1));
+    printf("O valor do topo depois de chamar p1 eh: %d\n\n", Topo(p1));
+
+    Pilha *copia = CopiaPilha(p1);
+    printf("Esse eh o topo da pilha depois de copiar: %d\n", Topo(copia));
+
+    Push(p2, 40.0);
+    Push(p2, 50.0);
+    ConcatenarPilha(p1, p2);
+    while (!PilhaVazia(p1)) {
+        printf("Sendo tirado agora: %d\n", Pop(p1));
+    }
+    LiberarPilha(p1);
+    LiberarPilha(p2);
+    LiberarPilha(copia);
+    return 0;
+}
