@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void Quicksort(int VET[], int ini, int fim)
+{
+    int pivo = ini, i = ini, j = fim, aux;
+    if(ini >= fim) return;
+    while (i < j)
+    {
+        while (VET[i] < VET[pivo])
+            i++;
+        while (VET[j] > VET[pivo])
+            j--;
+        if (i < j)
+        {
+            aux = VET[i];
+            VET[i] = VET[j];
+            VET[j] = aux;
+        }
+        if (i == pivo)
+            pivo = j;
+        else if (j == pivo)
+            pivo = i;
+    }
+    Quicksort(VET,ini,pivo-1);
+    Quicksort(VET,pivo+1,fim);
+}
+
+int main()
+{
+    int n = 14;
+    int VET[] = {35,43,28,12,05,40,53,48,27,23,19,18,38,07};
+    int ini = 0;
+    int fim = 13;
+    Quicksort(VET, ini, fim);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", VET[i]);
+    }
+    return 0;
+}
