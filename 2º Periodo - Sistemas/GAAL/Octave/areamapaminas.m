@@ -1,4 +1,4 @@
-A = imread('mapabrasil.png');
+A = imread('mapaminas.png');
 imshow(A)
 hold on;
 P = []
@@ -24,4 +24,4 @@ area=0;
 for i=1:n-1
     area+= (P(i,1)*P(i+1,2)-P(i,2)*P(i+1,1))/2;
 end
-area=abs(area)*100
+area = abs(area) * (2.1316) % Pixel = 1,46 (300km/205)
