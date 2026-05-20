@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net" pages="3">
+  <diagram name="1.1 - Conferencia com transportadora" id="3Vl6nUVvu1ic84VQ41om">
+    <mxGraphModel dx="936" dy="479" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GZFHbBb6W33UriMA_KH9-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Inicio" vertex="1">
+          <mxGeometry height="80" width="80" x="50" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Fazer o pedido para o fornecedor" vertex="1">
+          <mxGeometry height="60" width="120" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-6" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-3" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GZFHbBb6W33UriMA_KH9-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="300" as="sourcePoint" />
+            <mxPoint x="440" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-7" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-5" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="GZFHbBb6W33UriMA_KH9-21" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="300" as="sourcePoint" />
+            <mxPoint x="250" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-25" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="GZFHbBb6W33UriMA_KH9-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Aguardar entregas parciais" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-28" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GZFHbBb6W33UriMA_KH9-27" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-29" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="GZFHbBb6W33UriMA_KH9-26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-24" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Quantidade de caixas de acordo com o DANFE" vertex="1">
+          <mxGeometry height="160" width="170" x="400" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="B4qbTF2oVz9fbSIbgUNA-4" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="B4qbTF2oVz9fbSIbgUNA-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Rejeitar o recebimento e informar o fornecedor" vertex="1">
+          <mxGeometry height="60" width="120" x="425" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="B4qbTF2oVz9fbSIbgUNA-5" edge="1" parent="1" source="GZFHbBb6W33UriMA_KH9-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="TY2_nbI9W2zrjqTZnqH8-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GZFHbBb6W33UriMA_KH9-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Receber mercadoria" vertex="1">
+          <mxGeometry height="60" width="120" x="660" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TY2_nbI9W2zrjqTZnqH8-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="1.2" vertex="1">
+          <mxGeometry height="80" width="80" x="680" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="B4qbTF2oVz9fbSIbgUNA-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Aguardar resposta do fornecedor" vertex="1">
+          <mxGeometry height="60" width="120" x="425" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fuCjnctBnfddd7McXIqe" name="1.2 - Preenchimento da Planilha de Cadastro de Produtos">
+    <mxGraphModel dx="1030" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="d0lrq03oA3baKFyHykII" name="Página-3">
+    <mxGraphModel dx="1030" dy="527" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
