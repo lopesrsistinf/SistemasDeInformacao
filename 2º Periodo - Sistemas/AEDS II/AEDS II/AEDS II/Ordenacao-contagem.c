@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void Contagem(int VET[],int n){
+    int V[22],i,j,p;
+    for(i = 0;i < 22;i++) V[i] = 0;
+    for(i = 0; i < n;i++) V[VET[i]]++;
+    p = 0;
+    for(i = 0;i < 22;i++){
+        for(j = 0;j<V[i];j++) VET[p++] = i;
+    }
+}
+
+int main(){
+    int n = 22;
+    int VET[22] = {11,5,2,7,9,14,14,9,2,5,11,13,10,5,3,4,2,11,10,7,9,4};
+    Contagem(VET, n);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", VET[i]);
+    }
+    return 0;
+}
