@@ -1,0 +1,115 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// -------------------------------------
+
+//Questao 2:
+/*
+int Mystery(int n){
+if(n < 0) return 0;
+if(n == 0) return 1;
+printf("n = %d\n", n);
+return n + Mystery(n-2);
+}
+
+int main(){
+int X = 7, Result;
+Result = Mystery(X);
+printf("\nResult = %d\n", Result);
+return 0;
+}
+*/
+
+// -------------------------------------
+
+//Questao 3:
+/*
+double SomaSerie(int n){
+    double somaTotal;
+    if (n <= 1) {
+        somaTotal = 1.0;
+    } else {
+        somaTotal = (1.0 / n) + SomaSerie(n - 1);
+    }
+    return somaTotal;
+}
+
+int main(){
+    int n;
+    double total;
+    scanf("%d", &n);
+    total = SomaSerie(n);
+    printf("%.4lf\n", total);
+    return 0;
+}
+*/
+
+// -------------------------------------
+
+//Questao 4:
+/*
+struct lista{
+    int info;
+    struct lista* prox;
+};
+typedef struct lista Lista;
+
+void lst_imprime(Lista *li){
+    Lista* p;
+    for(p = li;p != NULL; p = p->prox)
+        printf("info = %d\n", p->info);
+}
+
+Lista* lst_BuscaUltima(Lista* li, int v) {
+    Lista* p;
+    Lista* ultimo = NULL;
+    for (p = li; p != NULL; p = p->prox) {
+        if (p->info == v) {
+            ultimo = p;
+        }
+    }
+    return ultimo;
+}
+
+Lista* lst_ExcluiSegundo(Lista* li) {
+    if (li == NULL || li->prox == NULL) {
+        return li;
+    }
+    Lista* segundo = li->prox;
+    li->prox = segundo->prox;
+    free(segundo);
+    return li;
+}
+*/
+
+// -------------------------------------
+
+//Questao 5:
+/*
+void InverteComPilha(Fila *f){
+    Pilha *aux = pilha_cria();
+    while(!fila_vazia(f)){
+        int v = fila_retira(f);
+        pilha_push(aux,v);
+    }
+    while(!pilha_vazia(aux)){
+        int v = pilha_pop(aux);
+        fila_insere(f,valor);
+    }
+    pilha_libera(aux);
+}
+*/
+
+// -------------------------------------
+
+//Questao 6:
+/*
+int SomaValoresFolhas(Arv*a){
+    if(a==NULL) return 0;
+    if(a->Esq == NULL && a->Dir==NULL)
+        return a->Info;
+    return SomaValoresFolhas(a->Esq) + SomaValoresFolhas(a->Dir);
+}
+*/
+
+// -------------------------------------
