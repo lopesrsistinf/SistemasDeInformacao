@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1781198858 source:c:\users\lopes\onedrive\documentos\aeds ii\trabalho final aeds ii\pizzatime\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
