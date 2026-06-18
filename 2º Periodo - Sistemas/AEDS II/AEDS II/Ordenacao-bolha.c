@@ -3,7 +3,7 @@
 
 void Bolha(int VET[], int n)
 {
-    int aux, i, j,troca = 0;
+    int aux, i, j, troca = 0;
     for (j = n - 1; j > 0; j--)
     {
         troca = 0;
@@ -16,8 +16,8 @@ void Bolha(int VET[], int n)
                 VET[i] = VET[i + 1];
                 VET[i + 1] = aux;
             }
-            if(!troca) break;
         }
+        if (!troca) break;
     }
 }
 
