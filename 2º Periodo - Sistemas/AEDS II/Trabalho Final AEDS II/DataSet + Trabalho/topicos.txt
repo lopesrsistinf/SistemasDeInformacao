@@ -1,0 +1,19 @@
+AppID - 0
+Name - 1
+Release_Date - 2
+Primary_Genre - 3
+All_Tags - 4
+Price_USD - 5
+Discount_Pct - 6
+Review_Score_Pct - 7
+Total_Reviews - 8
+Steam_Deck_Status - 9
+Estimated_Owners - 10
+24h_Peak_Players - 11
+
+    int AppID;
+    char Name[51],Release_Date[12],Primary_Genre[21],All_Tags[201];
+    double Price_USD,Discount_Pct,Review_Score_Pct;
+    int Total_Reviews;
+    char Steam_Deck_Status[21];
+    int Estimated_Owners,_24h_Peak_Players;
