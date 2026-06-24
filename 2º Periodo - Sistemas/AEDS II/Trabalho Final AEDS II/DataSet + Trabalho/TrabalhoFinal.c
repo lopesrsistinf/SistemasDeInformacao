@@ -11,7 +11,6 @@ typedef struct {
     int Total_Reviews;
     char Steam_Deck_Status[30];
     int Estimated_Owners, _24h_Peak_Players;
-    int Data;
 } steam_games_2026;
 
 typedef struct abb Abb;
@@ -19,9 +18,7 @@ typedef struct abb Abb;
 // Protótipos da Árvore:
 Abb* CriarAbb();
 Abb* InserirAbb(Abb* a, steam_games_2026 NovoJogo);
-void ImprimirAbb(Abb* a);
 Abb* BuscaAbb(Abb* a, int v, int *acessos);
-Abb* RetirarAbb(Abb* a, int v);
 
 //Estrutura da Árvore de Busca:
 struct abb {
@@ -49,13 +46,6 @@ Abb* InserirAbb(Abb* a, steam_games_2026 NovoJogo){
     return a;
 }
 
-void ImprimirAbb(Abb* a){
-    if (a == NULL) return;
-    ImprimirAbb(a->Esq);
-    printf("%d ", a->Jogo.AppID); 
-    ImprimirAbb(a->Dir);
-}
-
 Abb* BuscaAbb(Abb* a, int v, int *acessos){
     if(a == NULL) return NULL;
     (*acessos)++;
@@ -64,41 +54,7 @@ Abb* BuscaAbb(Abb* a, int v, int *acessos){
     else return BuscaAbb(a->Dir, v, acessos);
 }
 
-Abb* RetirarAbb(Abb* a, int v){
-    if (a == NULL) return NULL;
-    if (v < a->Jogo.AppID) {
-        a->Esq = RetirarAbb(a->Esq, v);
-    } else if (v > a->Jogo.AppID) {
-        a->Dir = RetirarAbb(a->Dir, v);
-    } else {
-        if (a->Esq == NULL) {
-            Abb* aux = a->Dir;
-            free(a);
-            return aux;
-        }
-        else if (a->Dir == NULL) {
-            Abb* aux = a->Esq;
-            free(a);
-            return aux;
-        }
-        Abb* aux = a->Dir;
-        while (aux->Esq != NULL) {
-            aux = aux->Esq;
-        }
-        a->Jogo = aux->Jogo;
-        a->Dir = RetirarAbb(a->Dir, aux->Jogo.AppID);
-    }
-    return a;
-}
-
 steam_games_2026 SteamGames[50000];
-
-int DataConv(int Dia, int Mes, int Ano){
-    return (1461*(Ano + 4800 + (Mes - 14)/12))/4+
-        (367 * (Mes - 2 - 12 * ((Mes - 14) / 12)))/12 -
-        (3 * ((Ano + 4900 + (Mes - 14)/12)/100))/4 +
-        Dia - 32075;
-}
 
 char * replace(char *s, char c1, char c2)
 {
@@ -143,13 +99,7 @@ int CarregaGames(){
 
             if(campo == 0) SteamGames[cont].AppID = atoi(texto);
             if(campo == 1) { strncpy(SteamGames[cont].Name, texto, 149); SteamGames[cont].Name[149] = '\0'; }
-            if(campo == 2) {
-                strncpy(SteamGames[cont].Release_Date, texto, 11); SteamGames[cont].Release_Date[11] = '\0';
-                char sdia[5], smes[5], sano[5];
-                if(sscanf(texto, "%2s/%2s/%4s", sdia, smes, sano) == 3) {
-                    SteamGames[cont].Data = DataConv(atoi(sdia), atoi(smes), atoi(sano));
-                }
-            }
+            if(campo == 2) { strncpy(SteamGames[cont].Release_Date, texto, 11); SteamGames[cont].Release_Date[11] = '\0'; }
             if(campo == 3) { strncpy(SteamGames[cont].Primary_Genre, texto, 49); SteamGames[cont].Primary_Genre[49] = '\0'; }
             if(campo == 4) { strncpy(SteamGames[cont].All_Tags, texto, 499); SteamGames[cont].All_Tags[499] = '\0'; }
             if(campo == 5) SteamGames[cont].Price_USD = strtof(replace(texto, ',', '.'), NULL);
@@ -186,30 +136,56 @@ int main()
         Raiz = InserirAbb(Raiz, SteamGames[i]);
     }
 
+    FILE *GameLista = fopen("GameSelection.txt", "w");
+    if(GameLista == NULL) {
+        printf("Erro ao criar o arquivo de saída!\n");
+        return 1;
+    }
+
     int RandAcess = 0;
     int SeqAcess = 0;
     clock_t TempIni, TempFim;
     double RandTime, SeqTime;
 
+    Abb* JogoEncontrado = NULL;
+
     // Pesquisa Aleatória
+    fprintf(GameLista, "PESQUISA ALEATÓRIA\n");
     TempIni = clock();
     for(int i = 0; i < 100; i++) {
-        int RandInd = rand() % Contador;
+        int RandInd = rand() % Contador; //Função pra pegar um valor aleatorio da arvre
         int ChaveBusca = SteamGames[RandInd].AppID;
-        BuscaAbb(Raiz, ChaveBusca, &RandAcess);
+        JogoEncontrado = BuscaAbb(Raiz, ChaveBusca, &RandAcess);
+        if(JogoEncontrado != NULL) {
+            fprintf(GameLista, "ID: %d | Nome: %s | Gênero: %s | Preço: USD %.2f\n", 
+                    JogoEncontrado->Jogo.AppID, 
+                    JogoEncontrado->Jogo.Name, 
+                    JogoEncontrado->Jogo.Primary_Genre, 
+                    JogoEncontrado->Jogo.Price_USD);
+        }
     }
     TempFim = clock();
     RandTime = ((double)(TempFim - TempIni)) / CLOCKS_PER_SEC;
 
     // Pesquisa Sequencial
+    fprintf(GameLista, "\nPESQUISA SEQUENCIAL\n");
     int IniSeq = rand() % (Contador > 100 ? Contador - 100 : 1);
     TempIni = clock();
     for(int i = 0; i < 100; i++) {
         int ChaveBusca = SteamGames[IniSeq + i].AppID;
-        BuscaAbb(Raiz, ChaveBusca, &SeqAcess);
+        JogoEncontrado = BuscaAbb(Raiz, ChaveBusca, &SeqAcess);
+        if(JogoEncontrado != NULL) {
+            fprintf(GameLista, "ID: %d | Nome: %s | Gênero: %s | Preço: USD %.2f\n", 
+                    JogoEncontrado->Jogo.AppID, 
+                    JogoEncontrado->Jogo.Name, 
+                    JogoEncontrado->Jogo.Primary_Genre, 
+                    JogoEncontrado->Jogo.Price_USD);
+        }
     }
     TempFim = clock();
     SeqTime = ((double)(TempFim - TempIni)) / CLOCKS_PER_SEC;
+
+    fclose(GameLista);
     
     printf("PESQUISA ALEATORIA:\n");
     printf("   Total de acessos (comparacoes): %d\n", RandAcess);
@@ -220,6 +196,6 @@ int main()
     printf("   Total de acessos (comparacoes): %d\n", SeqAcess);
     printf("   Media de acessos por chave:    %.2f\n", SeqAcess / 100.0);
     printf("   Tempo total de execucao:       %.6f segundos\n", SeqTime);
-
+    printf("\n");
     return 0;
 }
