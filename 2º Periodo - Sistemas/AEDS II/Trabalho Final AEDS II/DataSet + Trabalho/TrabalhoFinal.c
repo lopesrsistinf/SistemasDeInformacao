@@ -22,7 +22,7 @@ Abb* BuscaAbb(Abb* a, int v, int *acessos);
 
 //Estrutura da Árvore de Busca:
 struct abb {
-    steam_games_2026 Jogo; 
+    steam_games_2026 Jogo;
     struct abb *Esq, *Dir;
 };
 
@@ -86,17 +86,16 @@ int CarregaGames(){
         campo = 0;
         while(p != NULL){
             strcpy(texto, p);
-            if(texto[0] == '\"'){ 
-                strcpy(texto, p+1); 
+            if(texto[0] == '\"'){
+                strcpy(texto, p+1);
                 p = strtok(NULL, ",");
                 if(p != NULL) {
                     int tam = strlen(p);
                     if (p[tam - 1] == '\"') p[tam - 1] = '\0';
-                    strcat(texto, ","); 
+                    strcat(texto, ",");
                     strcat(texto, p);
                 }
             }
-
             if(campo == 0) SteamGames[cont].AppID = atoi(texto);
             if(campo == 1) { strncpy(SteamGames[cont].Name, texto, 149); SteamGames[cont].Name[149] = '\0'; }
             if(campo == 2) { strncpy(SteamGames[cont].Release_Date, texto, 11); SteamGames[cont].Release_Date[11] = '\0'; }
@@ -109,7 +108,7 @@ int CarregaGames(){
             if(campo == 9) { strncpy(SteamGames[cont].Steam_Deck_Status, texto, 29); SteamGames[cont].Steam_Deck_Status[29] = '\0'; }
             if(campo == 10) SteamGames[cont].Estimated_Owners= atoi(texto);
             if(campo == 11) SteamGames[cont]._24h_Peak_Players= atoi(texto);
-                
+
             p = strtok(NULL, ",");
             campo++;
         }
@@ -124,10 +123,10 @@ int main()
 {
     srand(time(NULL));
     int Contador = CarregaGames();
-    printf("%d Registros Carregados do CSV!\n\n", Contador);
+    printf("%d Registros Carregados do CSV\n\n", Contador);
 
     if(Contador == 0) {
-        printf("Nenhum registro carregado.\n");
+        printf("Nenhum registro carregado\n");
         return 0;
     }
 
@@ -149,7 +148,7 @@ int main()
 
     Abb* JogoEncontrado = NULL;
 
-    // Pesquisa Aleatória
+    // Pesquisa Aleatória + Salvar arquivo
     fprintf(GameLista, "PESQUISA ALEATÓRIA\n");
     TempIni = clock();
     for(int i = 0; i < 100; i++) {
@@ -157,28 +156,29 @@ int main()
         int ChaveBusca = SteamGames[RandInd].AppID;
         JogoEncontrado = BuscaAbb(Raiz, ChaveBusca, &RandAcess);
         if(JogoEncontrado != NULL) {
-            fprintf(GameLista, "ID: %d | Nome: %s | Gênero: %s | Preço: USD %.2f\n", 
-                    JogoEncontrado->Jogo.AppID, 
-                    JogoEncontrado->Jogo.Name, 
-                    JogoEncontrado->Jogo.Primary_Genre, 
+            fprintf(GameLista, "ID: %d | Nome: %s | Genero: %s | Preco: USD %.2f\n",
+                    JogoEncontrado->Jogo.AppID,
+                    JogoEncontrado->Jogo.Name,
+                    JogoEncontrado->Jogo.Primary_Genre,
                     JogoEncontrado->Jogo.Price_USD);
         }
     }
     TempFim = clock();
     RandTime = ((double)(TempFim - TempIni)) / CLOCKS_PER_SEC;
 
-    // Pesquisa Sequencial
+    // Pesquisa Sequencial + Salvar arquivo
     fprintf(GameLista, "\nPESQUISA SEQUENCIAL\n");
     int IniSeq = rand() % (Contador > 100 ? Contador - 100 : 1);
+    //int IniSeq = 0;
     TempIni = clock();
     for(int i = 0; i < 100; i++) {
         int ChaveBusca = SteamGames[IniSeq + i].AppID;
         JogoEncontrado = BuscaAbb(Raiz, ChaveBusca, &SeqAcess);
         if(JogoEncontrado != NULL) {
-            fprintf(GameLista, "ID: %d | Nome: %s | Gênero: %s | Preço: USD %.2f\n", 
-                    JogoEncontrado->Jogo.AppID, 
-                    JogoEncontrado->Jogo.Name, 
-                    JogoEncontrado->Jogo.Primary_Genre, 
+            fprintf(GameLista, "ID: %d | Nome: %s | Genero: %s | Preco: USD %.2f\n",
+                    JogoEncontrado->Jogo.AppID,
+                    JogoEncontrado->Jogo.Name,
+                    JogoEncontrado->Jogo.Primary_Genre,
                     JogoEncontrado->Jogo.Price_USD);
         }
     }
@@ -186,16 +186,14 @@ int main()
     SeqTime = ((double)(TempFim - TempIni)) / CLOCKS_PER_SEC;
 
     fclose(GameLista);
-    
+
     printf("PESQUISA ALEATORIA:\n");
-    printf("   Total de acessos (comparacoes): %d\n", RandAcess);
-    printf("   Media de acessos por chave:    %.2f\n", RandAcess / 100.0);
-    printf("   Tempo total de execucao:       %.6f segundos\n\n", RandTime);
+    printf("   Total de acessos: %d\n", RandAcess);
+    printf("   Tempo de execucao: %.12f segundos\n\n", RandTime);
 
     printf("PESQUISA SEQUENCIAL:\n");
-    printf("   Total de acessos (comparacoes): %d\n", SeqAcess);
-    printf("   Media de acessos por chave:    %.2f\n", SeqAcess / 100.0);
-    printf("   Tempo total de execucao:       %.6f segundos\n", SeqTime);
+    printf("   Total de acessos: %d\n", SeqAcess);
+    printf("   Tempo de execucao: %.12f segundos\n", SeqTime);
     printf("\n");
     return 0;
 }
