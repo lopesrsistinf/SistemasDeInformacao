@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="document">
+	<name>Projeto de mapa sem título</name>
+	<gx:CascadingStyle kml:id="__managed_style_0ED826396E40ED5471B0_highlight">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0ED826396E40ED5471B0_normal">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0ED826396E40ED5471B0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0ED826396E40ED5471B0_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0ED826396E40ED5471B0_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0AB0DAE77440ED5471A1">
+		<name>P1</name>
+		<LookAt>
+			<longitude>-43.86488886992584</longitude>
+			<latitude>-16.72354670190764</latitude>
+			<altitude>647.4363699064897</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>7431.01500256802</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<Point>
+			<coordinates>-43.87936009370718,-16.71931809390953,643.7275366367218</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0D222E55B140ED55C99F">
+		<name>P2</name>
+		<LookAt>
+			<longitude>-43.81370397918398</longitude>
+			<latitude>-17.35355944650707</latitude>
+			<altitude>874.8681188462365</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>317985.6151033938</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<Point>
+			<coordinates>-43.61513825351437,-17.81391239947148,754.9916528308762</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="09B8A53E9540ED561E83">
+		<name>P3</name>
+		<LookAt>
+			<longitude>-43.97125948933167</longitude>
+			<latitude>-17.20239951835491</latitude>
+			<altitude>1080.692511802202</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>623160.4036530107</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<Point>
+			<coordinates>-42.33966627512395,-18.2536550204422,593.8962310866857</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0DE9D9515240ED5A3108">
+		<name>P4</name>
+		<LookAt>
+			<longitude>-41.33047376696613</longitude>
+			<latitude>-18.97697732289618</latitude>
+			<altitude>856.3651933531276</altitude>
+			<heading>8.420290346082743</heading>
+			<tilt>0.4083536122828685</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>784056.9517229499</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<Point>
+			<coordinates>-43.24449605380436,-19.62648511833451,1207.592373533154</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0F2E879BC440ED5A4428">
+		<name>P5</name>
+		<LookAt>
+			<longitude>-42.79514457229794</longitude>
+			<latitude>-20.86132136079792</latitude>
+			<altitude>920.2116884217257</altitude>
+			<heading>8.895035999948893</heading>
+			<tilt>0.40834948412204</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>783993.0126994103</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<Point>
+			<coordinates>-43.98909646339467,-20.87279629706859,1166.222172361311</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E75DFE6B540ED5CC259">
+		<name>P1 - P5</name>
+		<LookAt>
+			<longitude>-43.73637961514159</longitude>
+			<latitude>-18.71197688894955</latitude>
+			<altitude>1326.163198608302</altitude>
+			<heading>-8.754059784299487</heading>
+			<tilt>45.73473215588604</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1103822.131779939</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<LineString>
+			<coordinates>
+				-43.8489523367317,-16.65057129608916,0 -43.99893720721615,-20.83392982262438,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	<Placemark id="0C3661C28F40ED5E4D9E">
+		<name>P1 -&gt; P5</name>
+		<LookAt>
+			<longitude>-43.73637961514159</longitude>
+			<latitude>-18.71197688894955</latitude>
+			<altitude>1326.163198608302</altitude>
+			<heading>-8.754059784299487</heading>
+			<tilt>45.73473215588604</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>1103822.131779939</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0ED826396E40ED5471B0</styleUrl>
+		<LineString>
+			<coordinates>
+				-43.88937650718959,-16.67245526147113,0 -43.63118429697234,-17.74624161466796,0 -42.35171408463033,-18.19304569397012,0 -43.25829174812858,-19.61020411464088,0 -44.00202587676682,-20.8195093819402,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>
