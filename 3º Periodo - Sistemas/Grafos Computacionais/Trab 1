@@ -1,4 +1,0 @@
-Pede-se: Dado um conjunto de 20 cidades espalhadas pelo mundo:
-1) Registrar um conjunto de rotas aéreas em uma matriz de adjacência (usar informação real proveniente de um LLM (large language model)). 
-2) Dado duas cidades, avaliar se existe uma rota entre as cidades desconsiderando o sentido das rotas. 
-3) Mostrar funcionando individualmente para o professor em sala de aula.
