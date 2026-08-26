@@ -10,6 +10,7 @@ public class Soma{
         B = ler.nextInt();
         C = A + B;
         System.out.printf("O resultado da soma eh: %d \n",C);
+        ler.close();
     }
 }
 
