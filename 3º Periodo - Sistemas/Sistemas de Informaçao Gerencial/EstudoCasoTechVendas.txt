@@ -1,0 +1,17 @@
+Para leitura:
+
+https://databackup.com.br/blog/tipos-de-backup/?utm_source=gemini
+
+https://ifsertaope.edu.br/wp-content/uploads/2024/01/Norma-Complementar-03-Politica-de-Backup-e-Restauracao-de-Dados.pdf
+1. Contexto Organizacional
+A TechVendas S.A. é uma empresa de médio porte do setor de distribuição industrial. O ambiente corporativo conta com a seguinte estrutura de TI:
+50 Notebooks: Utilizados pelos vendedores em campo e por equipes administrativas em modelo híbrido.
+Servidores de Arquivos (File Servers): Repositório de 2 TB (contratos, relatórios, projetos e mídias de vendas).
+Sistema CRM: Aplicação web hospedada localmente rodando banco de dados PostgreSQL (150 GB) e repositório de anexos de propostas/contratos (300 GB).
+2. Diagnóstico de Desafios e Riscos
+Mobilidade dos Vendedores: Notebooks fora da rede corporativa com conexão instável, sujeitos a perdas, roubos e ataques de ransomware.
+Crescimento do Servidor de Arquivos: Mídias e documentos crescem a uma taxa de 15% ao mês; realizar backups completos diários causaria gargalos na rede e consumo de armazenamento.
+Crítica e Disponibilidade do CRM: O banco de dados do CRM exige o menor tempo de recuperação (RTO) e a menor perda de dados tolerável (RPO).
+
+
+Elabore uma proposta de backup para este cenário;
