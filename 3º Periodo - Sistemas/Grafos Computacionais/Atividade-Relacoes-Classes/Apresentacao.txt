@@ -1,0 +1,46 @@
+Para estruturar a apresentação ou o relatório final deste trabalho, a explicação deve ser dividida em três eixos principais: a comprovação técnica dos requisitos, a definição da arquitetura do Chromium e o detalhamento das relações orientadas a objetos.
+
+1. Atendimento aos Requisitos do Trabalho
+A implementação em Python cumpriu rigorosamente as três exigências do escopo do projeto:
+
+Extração de Relações (Chromium): O código modela um subconjunto real e vital do projeto de código aberto Chromium. As dependências foram mapeadas estaticamente na lista relacoes usando tuplas lógicas (Origem, Destino, Tipo).
+
+Ferramenta de Representação de Grafos: Foi adotada a biblioteca networkx para a estruturação matemática do Grafo Direcionado (nx.DiGraph()), garantindo que a direção das dependências (quem herda de quem, quem compõe quem) seja respeitada. A renderização gráfica foi delegada ao matplotlib, utilizando um mapeamento espacial manual (o dicionário pos) para evitar sobreposições e organizar o grafo em domínios arquitetônicos.
+
+Rótulos e Cores Visuais: O laço de repetição no código categoriza dinamicamente as arestas: relações de Composição/Associação recebem a cor Azul (#2196F3), enquanto relações de Herança recebem a cor Vermelha (#F44336). As funções draw_networkx_labels e draw_networkx_edge_labels garantem que todos os vértices e arestas possuam seus devidos nomes e tipos.
+
+2. A Separação de Domínios no Chromium
+O design visual do grafo foi dividido ao meio por uma linha tracejada e categorizado por cores de fundo (Verde e Amarelo) para explicar a característica mais importante do Chromium: sua Arquitetura Multiprocesso.
+
+Parte 2: Interfaces de Janela (Lado Direito / Amarelo): Representa o processo principal do navegador (Browser Process). É a camada de alta confiança que interage com o sistema operacional. Ela gerencia o que o usuário vê e clica (janelas, abas, menus e barra de endereços).
+
+Parte 1: Renderização (Lado Esquerdo / Verde): Representa os processos de renderização (Render Processes). É a camada de baixa confiança (Sandbox) responsável por executar o HTML, CSS e JavaScript dos sites.
+
+A aresta vermelha que cruza de WebContentsImpl para WebContents é a fronteira exata onde o motor de renderização da página se comunica de forma segura com a interface do navegador.
+
+3. Detalhamento das Relações de Classe
+Para explicar os nós e setas, agrupe as classes pelo tipo de relação orientada a objetos que elas exercem.
+
+Composição e Associação (Setas Azuis)
+A composição indica posse estrita e gerenciamento de ciclo de vida (quando o "Pai" é destruído, os "Filhos" também são).
+
+BrowserList → Browser: O usuário pode abrir várias instâncias (janelas independentes) do navegador. O BrowserList é a coleção que agrega todos esses navegadores ativos.
+
+Browser → TabStripModel e BrowserWindow: A classe central de lógica do navegador (Browser) compõe e gerencia sua janela física (BrowserWindow) e a sua faixa superior de abas (TabStripModel).
+
+TabStripModel → WebContents: A barra de abas gerencia o conteúdo das páginas. O WebContents é a abstração central que representa uma aba individual aberta.
+
+WebContentsImpl → RenderFrameHostManager: Uma página web moderna é feita de vários quadros (o documento principal e vários iframes de anúncios ou vídeos). O WebContents delega o controle desses quadros para um gerente.
+
+RenderFrameHostManager → RenderFrameHost: O gerente controla instâncias individuais de hosts para cada iframe da página.
+
+RenderFrameHostImpl → RenderProcessHost: Representa a Associação com o sistema operacional. O quadro visual precisa se comunicar com o processo em background isolado onde o motor JavaScript (V8) está rodando.
+
+Herança (Setas Vermelhas)
+A herança indica polimorfismo, onde uma classe implementa um contrato genérico ou especializa um comportamento.
+
+Adoção do Padrão "Impl" (WebContentsImpl → WebContents | RenderFrameHostImpl → RenderFrameHost): O Chromium usa intensamente classes base puramente virtuais (interfaces) para esconder a complexidade. O resto do sistema interage apenas com WebContents, mas quem executa o trabalho pesado é a classe filha WebContentsImpl.
+
+BrowserView → BrowserWindow: O Chromium roda em Windows, Mac e Linux. BrowserWindow é a interface genérica do sistema, enquanto BrowserView é a herança que implementa os botões e bordas reais desenhados na tela do usuário específico.
+
+Browser → WebContentsDelegate (Padrão Delegate): O navegador precisa reagir ao que acontece dentro da página. O Browser herda a interface WebContentsDelegate para escutar eventos, como quando um site tenta abrir um pop-up ou quando a página termina de carregar, para poder atualizar o ícone de loading na aba.

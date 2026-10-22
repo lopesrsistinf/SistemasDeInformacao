@@ -1,0 +1,4 @@
+Pede-se: Representar as relações entre classes de um software usando grafos. 
+1) Extrair as relações de classes de um software de código aberto. Exemplo: argouml, jedit, chromium, drjava, outros.
+2) Usar uma ferramenta de representação de grafos para mostrar quando uma classe está relacionada a outra usando uma biblioteca gráfica. Sugestão: https://relation-graph.com/examples
+3) Os vértices devem ser rotulados e as arestas coloridas conforme a relação entre as classes sejam de composição ou herança.
