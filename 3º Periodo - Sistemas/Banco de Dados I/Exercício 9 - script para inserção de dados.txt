@@ -1,0 +1,55 @@
+
+# Inserir dados em Clientes
+INSERT INTO clientes (nome, email, cidade, estado, data_cadastro) values 
+('João Silva','jjj@gmail.com','jjjjjjjjjj','MG','2026/05/17'),
+('Ana Silva','aaa@gmail.com','aaaaaaa','MG','2026/05/20'),
+('Pedro Jose','ppp@gmail.com','ppppppp','SP','2026/05/21'),
+('Carlos Araújo','ccc@gmail.com','ccccccc','RJ','2026/05/22'),
+('Maria de Jesus','mmm@gmail.com','mmmmmm','MG','2026/05/22'),
+('Laura Souza','lll@gmail.com','lllllllllll','BA','2026/05/23'),
+('Bruno Nobre','bbb@gmail.com','bbbbbbbb','MG','2026/05/23'),
+('Sandra Carla','sss@gmail.com','sssssssssss','SP','2026/05/25'),
+('Tadeu Silva','ttt@gmail.com','tttttttt','MT','2026/05/27');
+
+# Inserir dados em Categorias
+INSERT INTO categorias (nome_categoria) values 
+('1ª linha'),
+('2ª linha'),
+('3ª linha'),
+('Similar'),
+('Não classificado');
+
+# Inserir dados em Produtos
+INSERT INTO produtos (nome_produto, preco, estoque, id_categoria) values 
+('Camisa da seleção brasileira',300,200,1),
+('Boné da Nike',30,40,2),
+('Camiseta da NBA',150,100,2),
+('Calça jeans',60,120,3),
+('Shorts',50,90,2);
+
+# Inserir dados em Pedidos
+INSERT INTO pedidos (id_cliente, data_pedido, status_pedido) values 
+(1,'2026/05/17','Entregue'),
+(2,'2026/05/19','Entregue'),
+(3,'2026/05/25','Em rota de entrega'),
+(1,'2026/05/25','Em rota de entrega'),
+(5,'2026/05/27','Em análise');
+
+# Inserir dados em Itens_pedido
+INSERT INTO itens_pedido (id_pedido, id_produto, quantidade, valor_unitario) values 
+(1,1,1,250),
+(2,2,1,30),
+(2,3,1,150),
+(3,4,1,60),
+(4,5,1,50);
+
+# Inserir dados em Pagamentos
+INSERT INTO pagamentos (id_pedido, tipo_pagamento, valor_pago, data_pagamento) values 
+(1,'Dinheiro',250,'2026/05/17'),
+(2,'Pix',30,'2026/05/19'),
+(2,'Pix',150,'2026/05/25'),
+(3,'Cartão Débito',60,'2026/05/25'),
+(4,'Cartão Crédito',50,'2026/05/27');
+
+
+
